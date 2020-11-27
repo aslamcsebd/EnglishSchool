@@ -10,8 +10,8 @@ class NewsController extends Controller
 {
    public function news()
     {
-      $news = News::all();
-      return view('admin.pages.news.index', compact('news'));      
+      $data['allNews'] = News::all();
+      return view('admin.pages.news.index', $data);      
     }
 
     public function editNews(Request $request){ 
@@ -21,7 +21,9 @@ class NewsController extends Controller
          'message'=>$request->message,
       ]);
 
-      echo $request->id;
+      $data['allNews'] = News::all();
+      return view('admin.pages.news.index', $data); 
+
    }
 
 

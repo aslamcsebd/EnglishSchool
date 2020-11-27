@@ -14,6 +14,8 @@
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  {{-- style --}}
+  <link rel="stylesheet" href="{{asset('admin/style.css')}}">
   @stack('css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed " >

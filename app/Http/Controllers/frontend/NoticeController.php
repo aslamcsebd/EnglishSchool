@@ -16,6 +16,7 @@ class NoticeController extends Controller
     public function index()
     {
         $data['notices'] = Notice::latest()->get();
+
         return view('frontend.pages.noticebord.all',$data);
     }
 
@@ -48,7 +49,8 @@ class NoticeController extends Controller
      */
     public function show($id)
     {
-        $data['notice'] = Notice::find($id);
+        $data['notice'] = Notice::find($id);        
+        // $data['OneNotices'] = Notice::latest()->get();
         return view('frontend.pages.noticebord.single',$data);
     }
 

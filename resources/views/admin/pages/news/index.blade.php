@@ -29,30 +29,29 @@
                 <form role="form" method="POST" action="{{ url('editNews') }}">
                     @csrf
                   <div class="card-body">
-                     @foreach($news as $news2)
+                     @foreach($allNews as $news)
 
-                     {{ $news2->id }} 
-
-                     <input type="hidden" name="id" value="{{ $news2->id }}">
-                     <input type="" name="" placeholder="hi">                                      
+                     <input type="hidden" name="id" value="{{ $news->id }}">                     
                                    
                     <div class="form-group">
                       <label for="exampleInputEmail1"></label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" value="{{ $news2->id }}" placeholder="Title" name="title">
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="{{ $news->title }}" placeholder="Title" name="title">
                     </div>
 
                    <div class="form-group">
                        <label for="my-textarea">Message</label>
-                       <textarea id="my-textarea" class="form-control" placeholder="Insert News" name="message" rows="5">{{ $news2->id }}</textarea>
+                       <textarea id="my-textarea" class="form-control" placeholder="Insert News" name="message" rows="5">{{ $news->message }}</textarea>
                    </div>
                     @endforeach
                   </div>
                   <!-- /.card-body -->
-  
-                  <div class="card-footer loat-right">
-                     <a href="{{route("category.home")}}" class="btn btn-danger btn-outline-light">Cancel</a>
-                    <button type="submit" class="btn btn-success btn-outline-light">Update</button>
+
+                  <div class="card-footer float-right" role="group" aria-label="Basic example">
+                    <a href="{{route("category.home")}}" class="btn btn-danger tn-outline-light">Cancel</a>
+                    <button type="submit" class="btn btn-success tn-outline-light">Update</button>
                   </div>
+
+                  
                 </form>
               </div>
         </div>       

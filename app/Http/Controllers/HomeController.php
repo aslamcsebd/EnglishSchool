@@ -20,6 +20,7 @@ class HomeController extends Controller
         $data['directors'] = Doctor::where('status',1)->latest()->get();
         $data['facilities'] = facility::latest()->get();
         $data['curries'] = Curriculam::latest()->get();
+        //$data['OneNotices'] = Notice::latest()->get();
         $data['notices'] = Notice::latest()->get();
         $data['galleries'] = Gallery::latest()->get();
         //$data['notices'] = News::all();

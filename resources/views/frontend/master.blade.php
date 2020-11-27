@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="{{ asset('frontend/css/newsHeading.css') }}">
 
         <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/style2.css') }}">
         <link rel="stylesheet" href="{{asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
         @stack('css')
 

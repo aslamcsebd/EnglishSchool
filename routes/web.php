@@ -18,11 +18,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout', 'Auth\LoginController@logout');
-
-
-
-
-            
+         
 Route::get('/','HomeController@index')->name('homes');
 Route::get('/about','HomeController@aboutUs')->name('aboutus');
 Route::get('/curricular','HomeController@curricular')->name('curricular');
@@ -57,8 +53,6 @@ Route::prefix('admin')->group(function(){
 });
 
 
-
-
 Route::get('/developer',function(){
     return "Developer name: forkanalam . contact:01861238123 , mail:forkanalam295@gmail.com";
 });
@@ -72,6 +66,3 @@ Route::get('/pdfform',function(){
 //News
 Route::get('news','admin\NewsController@news')->name('news');
 Route::post('editNews', 'admin\NewsController@editNews')->name('editNews');
-
-
-

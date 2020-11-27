@@ -1,0 +1,31 @@
+/*Navbar design*/
+
+.ftco-navbar-light { background: #f5f5f5 !important;  border-radius: 5%;}
+.navbar-brand { padding: 5px 0; }
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+    font-size: 15px;
+    /*padding-top: 2.3rem; */
+    padding-top: 0.9rem !important;
+    /*padding-bottom: 2.3rem; */
+    padding-bottom: 0.9rem !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 400;
+    color: #000000;
+    opacity: 1 !important;
+}
+
+
+.blog-entry .bg-white{ background-color: #81ecec !important; }
+.notice_Description{ text-align: justify; text-justify: inter-word; }
+
+/*Notise*/
+.blog-entry .bg-white, .blog-entry .meta-date { border-radius: 10px; }
+.single_notice { padding: 4em 0; }
+
+/*News*/
+.acme-news-ticker { height: 30px; }
+.acme-news-ticker-label { padding: 5px; }
+.acme-news-ticker-box { padding-top: 0px; }
+.acme-news-ticker { margin-top: 5px; }
