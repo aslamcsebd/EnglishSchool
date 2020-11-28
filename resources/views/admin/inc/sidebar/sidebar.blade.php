@@ -191,7 +191,7 @@
                         <p>All Images</p>
                      </a>
                   </li>
-               </ul
+               </ul>
             </li>
             {{-- <li class="nav-item has-treeview">
                <a href="#" class="nav-link  {{ (request()->is('admin/shedule*')) ? 'active' : '' }}">
@@ -236,9 +236,27 @@
             </li> --}}
 
             <li class="nav-item has-treeview">
+               <a href="#" class="nav-link  {{ (request()->is('admin/shedule*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-comment-dollar"></i>
+                  <p>
+                     Payment Matter
+                     <i class="fas fa-angle-left right"></i>
+                  </p>
+               </a>
+               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/shedule*')) ? 'block' : 'none' }}">
+                  <li class="nav-item">
+                     <a href="{{ url('payment') }}" class="nav-link">
+                        <i class="nav-icon far fa-circle"></i>
+                        <p>All Payment</p>
+                     </a>
+                  </li>                  
+               </ul>
+            </li>
+
+            <li class="nav-item has-treeview">
                <a class="nav-link" href="{{ url('news') }}">
                   <i class="fas fa-newspaper"></i>
-                     <p>News </p>                          
+                     <p>News </p>                    
                </a>      
             </li>
          </ul>

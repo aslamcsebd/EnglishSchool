@@ -66,3 +66,10 @@ Route::get('/pdfform',function(){
 //News
 Route::get('news','admin\NewsController@news')->name('news');
 Route::post('editNews', 'admin\NewsController@editNews')->name('editNews');
+
+
+// payment
+Route::get('payment','admin\PaymentController@payment')->name('payment');
+Route::post('update_payment_rule', 'admin\PaymentController@update_payment_rule')->name('update_payment_rule');
+
+// Add_Payment_Number

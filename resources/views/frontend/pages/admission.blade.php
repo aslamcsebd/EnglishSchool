@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
    
-   <form action="#" action="{{ route('admission.store') }}" method="POST">
+   <form action="{{ route('admission.store') }}" method="POST">
       @csrf
       <div class="row">
          <div class="col-6">            
@@ -198,8 +198,20 @@
                <input type="submit" value="Apply" class="btn btn-info py-3 px-5">
                <a href="{{ route('downloadform') }}" class="btn btn-success py-3 px-5" target="__blank">Download Form</a>
             </div>
+
+            @php
+               $payment_rules = App\payment_rules::all();
+            @endphp
+
+            @foreach($payment_rules as $payment_rule)
+            <div class="border p-4">
+               <p>{{ $payment_rule->information }}</p>
+            </div>
+            @endforeach
+
+           
          </div>
-         
+
       </div>
       <div class="row mt-2">
          
