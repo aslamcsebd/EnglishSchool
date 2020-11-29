@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
    
-   <form  action="{{ route('admission.store') }}" method="POST">
+   <form action="{{ route('admission.store') }}" method="POST">
       @csrf
       <div class="row">
          <div class="col-6">            
@@ -127,9 +127,7 @@
                <div class="alert alert-danger p-1" style="font-size: 10px">{{ $message }}</div>
                @enderror
             </div>
-            
-            
-            
+
          </div>
          
          <div class="col-md-6 p-4 p-md-5 bg-light">
@@ -198,14 +196,18 @@
                <input type="submit" value="Apply" class="btn btn-info py-3 px-5">
                <a href="{{ route('downloadform') }}" class="btn btn-success py-3 px-5" target="__blank">Download Form</a>
             </div>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            @php
+               $payment_rules = App\payment_rules::all();
+            @endphp
+
+            @foreach($payment_rules as $payment_rule)
+            <div class="border p-4">
+               <p>{{ $payment_rule->information }}</p>
+            </div>
+            @endforeach
          </div>
-         
+
       </div>
       <div class="row mt-2">
 
@@ -219,3 +221,5 @@
 {!! Toastr::message() !!}
 <script src="{{asset('admin/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 @endpush
+
+

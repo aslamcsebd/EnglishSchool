@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBKashInfosTable extends Migration
+class CreateBlankFormsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateBKashInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('b_kash_infos', function (Blueprint $table) {
+        Schema::create('blank_forms', function (Blueprint $table) {
             $table->id();
-            $table->text('info');          
+            $table->string('name_eng');
+            $table->string('father_name_eng');
+            $table->string('mother_name_eng');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateBKashInfosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('b_kash_infos');
+        Schema::dropIfExists('blank_forms');
     }
 }

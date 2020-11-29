@@ -59,6 +59,7 @@
             <li class="nav-item {{ (request()->is('curricular')) ? 'active' : '' }}"><a href="{{ route('curricular') }}" class="nav-link">Curricular Activities</a></li>
             <li class="nav-item {{ (request()->is('gallery')) ? 'active' : '' }}"><a href="{{ route('gallery') }}" class="nav-link">Gallery</a></li>
             <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
+            <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}"><a href="{{ route('downloadForm') }}" class="nav-link bg-info"><span class="text-white">Download Form</span></a></li>
             
             <li class="nav-item"><a href="{{ route('admission.index') }}" class="nav-link bg-dark"><span class="text-white">Apply Now</span></a></li>
          </ul>

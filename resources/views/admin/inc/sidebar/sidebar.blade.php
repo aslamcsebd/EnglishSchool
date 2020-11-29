@@ -236,41 +236,31 @@
                   </li>
                </ul>
             </li> --}}
-
-             <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/dental-college*')) ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-dollar-sign"></i>
+               
+            <li class="nav-item has-treeview">
+               <a href="#" class="nav-link  {{ (request()->is('admin/shedule*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-comment-dollar"></i>
                   <p>
-                     bKash
+                     Payment Matter
                      <i class="fas fa-angle-left right"></i>
                   </p>
                </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/dental-college*')) ? 'block' : 'none' }}">
+               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/shedule*')) ? 'block' : 'none' }}">
                   <li class="nav-item">
-                     <a href="{{route("category.index")}}" class="nav-link  {{ (request()->is('admin/dental-college/category')) ? 'active' : '' }}">
+                     <a href="{{ url('payment') }}" class="nav-link">
                         <i class="nav-icon far fa-circle"></i>
-                        <p> bKash Info</p>
+                        <p>All Payment</p>
                      </a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="{{route("post.index")}}" class="nav-link  {{ (request()->is('admin/dental-college/post')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p> bKash Payment</p>
-                     </a>
-                  </li>
+                  </li>                  
                </ul>
             </li>
 
-
-
-
-
-            {{-- <li class="nav-item has-treeview">
+            <li class="nav-item has-treeview">
                <a class="nav-link" href="{{ url('news') }}">
                   <i class="fas fa-newspaper"></i>
-                     <p>News </p>                          
+                     <p>News </p>                    
                </a>      
-            </li> --}}
+            </li>
          </ul>
       </nav>
       <!-- /.sidebar-menu -->

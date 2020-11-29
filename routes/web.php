@@ -3,17 +3,6 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -66,3 +55,15 @@ Route::get('/pdfform',function(){
 //News
 Route::get('news','admin\NewsController@news')->name('news');
 Route::post('editNews', 'admin\NewsController@editNews')->name('editNews');
+
+
+// payment
+Route::get('payment','PaymentController@payment')->name('payment');
+Route::post('update_payment_rule', 'PaymentController@update_payment_rule')->name('update_payment_rule');
+
+// Add_Payment_Number
+Route::post('Add_Payment_Number', 'PaymentController@Add_Payment_Number')->name('Add_Payment_Number');
+
+// Form
+Route::get('downloadForm','PaymentController@downloadForm')->name('downloadForm');
+Route::post('blankForm','PaymentController@blankForm')->name('blankForm');

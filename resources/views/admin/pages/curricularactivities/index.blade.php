@@ -42,8 +42,7 @@
                     <div class="row">
                       <div class="col-12 col-md-6">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">To</label>
-                      
+                          <label for="exampleInputEmail1">To</label>                      
                            <input class="form-control" type="time" name="time_to">
                         
                           @error('time_to')
@@ -59,6 +58,8 @@
                             @error('time_from')
                                <div class="alert alert-danger p-1" style="font-size: 10px">{{ $message }}</div>
                              @enderror
+
+                             
                            
 
                         </div>

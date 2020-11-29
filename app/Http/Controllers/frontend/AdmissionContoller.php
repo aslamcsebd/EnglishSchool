@@ -107,7 +107,7 @@ class AdmissionContoller extends Controller
         $pdf = PDF::loadView('frontend.pages.admissionpdf', $data);
         // return view('frontend.pages.admissionpdf',$data);
         return $pdf->setPaper('a4','potrait')->stream('invoice.pdf');
-        // return redirect()->back(); 
-
+        // return redirect()->back();
     }
+
 }
