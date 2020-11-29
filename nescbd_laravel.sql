@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 26, 2020 at 09:43 AM
+-- Generation Time: Nov 28, 2020 at 03:07 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -110,7 +110,8 @@ CREATE TABLE `admissions` (
 --
 
 INSERT INTO `admissions` (`id`, `email`, `name_eng`, `name_bng`, `dob`, `nationality`, `religion`, `father_name_eng`, `father_name_bng`, `mother_name_eng`, `mother_name_bng`, `per_add`, `mailing_add`, `sla`, `moi`, `last_place`, `find_out`, `curricular`, `challanged`, `father_occupation`, `mother_occupation`, `father_nid`, `mother_nid`, `father_contact`, `mother_contact`, `father_fb`, `mother_fb`, `transports`, `created_at`, `updated_at`) VALUES
-(3, 'forkanalam295@gmail.com', 'asdf', 'asdf', '2020-11-14', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asd', 'asdf', 'asdf', 'sadf', '1', 'asdf', 0, 'sdf', 'asdf', 234234, 23423, '2342342', '34234234', NULL, NULL, '1', '2020-11-13 18:38:20', '2020-11-13 18:38:20');
+(3, 'forkanalam295@gmail.com', 'asdf', 'asdf', '2020-11-14', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asd', 'asdf', 'asdf', 'sadf', '1', 'asdf', 0, 'sdf', 'asdf', 234234, 23423, '2342342', '34234234', NULL, NULL, '1', '2020-11-13 18:38:20', '2020-11-13 18:38:20'),
+(4, '2a@gmail.com', 'as', 'as', '1994-11-10', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'a@gmail.com', 'fgf', 'fgf', 'fgfg', '1', 'fgfg', 1, 'dsd', 'sds', 22121, 12121, '221', '1212', 'fa.com', 'bf.com', '1', '2020-11-27 20:59:32', '2020-11-27 20:59:32');
 
 -- --------------------------------------------------------
 
@@ -395,7 +396,7 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `message`, `created_at`, `updated_at`) VALUES
-(1, 'News', '\r\n            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', NULL, NULL);
+(1, 'qwwqwNews2', '123654789qwqwq', NULL, '2020-11-26 11:14:30');
 
 -- --------------------------------------------------------
 
@@ -417,7 +418,14 @@ CREATE TABLE `notices` (
 --
 
 INSERT INTO `notices` (`id`, `title`, `description`, `date`, `created_at`, `updated_at`) VALUES
-(1, 'Halloween Holiday', 'Halloween is a holiday celebrated each year on October 31, and Halloween 2020 will occur on Saturday, October 31. The tradition originated with the ancient Celtic festival of Samhain, when people would light bonfires and wear costumes to ward off ghosts', '2020-11-12', '2020-11-05 04:12:46', '2020-11-05 04:12:46');
+(1, 'Halloween Holiday', 'Halloween is a holiday celebrated each year on October 31, and Halloween 2020 will occur on Saturday, October 31. The tradition originated with the ancient Celtic festival of Samhain, when people would light bonfires and wear costumes to ward off ghosts', '2020-11-12', '2020-11-05 04:12:46', '2020-11-05 04:12:46'),
+(2, 'Office2', 'Halloween is a holiday celebrated each year on October 31, and Halloween 2020 will occur on Saturday, October 31. The tradition originated with the ancient Celtic festival of Samhain, when people would light bonfires and wear costumes to ward off ghosts', '2020-11-28', '2020-11-26 07:55:24', '2020-11-26 07:55:55'),
+(3, 'Office3', 'Halloween is a holiday celebrated each year on October 31, and Halloween 2020 will occur on Saturday, October 31. The tradition originated with the ancient Celtic festival of Samhain, when people would light bonfires and wear costumes to ward off ghosts', '2020-11-16', '2020-11-26 08:35:33', '2020-11-26 08:35:33'),
+(5, 'বাংলা কবিতা', 'বাংলা-কবিতা ডট কম ওয়েবসাইটটি বর্তমান সময়ে বাংলা কবিতার সবচেয়ে জনপ্রিয় ও সমৃদ্ধ ওয়েব পোর্টাল। এ প্রজন্মের শতাধিক কবি আমাদের কবিতার আসরে প্রতিদিন কবিতা প্রকাশ করছেন। কবিতা প্রকাশের পাশাপাশি রয়েছে কবি ও কবিতার উপর নানারকম আলোচনা, কবিতার বই ও আবৃত্তি প্রকাশের সুবিধা। উপস্থিত সদস্যেরা যেমন সমমনা কবি ও সদস্যদের সাথে পরিচিত হতে পারছেন, পাশাপাশি ওয়েবসাইটের সার্বিক আবহে ঋদ্ধ হচ্ছেন বাংলা সাহিত্যের কাব্যিক আবেশে। এছাড়াও এখানে রয়েছে বাংলার খ্যাতিমান কবিদের সহস্রাধিক কবিতার এক সংগ্রহশালা, যা নিয়মিত আরও সমৃদ্ধ হচ্ছে। আপনি যদি সৌখিন কবি, আবৃত্তিকার, অথবা কবিতা-প্রেমী যে কেউ হয়ে থাকেন, তবে জানবেন এই ওয়েবসাইটটি আপনার জন্যেই তৈরি করা হয়েছে!', '2020-11-28', '2020-11-26 10:08:49', '2020-11-26 10:08:49'),
+(6, 'Halloween Holiday', 'Halloween is a holiday celebrated each year on October 31, and Halloween 2020 will occur on Saturday, October 31. The tradition originated with the ancient Celtic festival of Samhain, when people would light bonfires and wear costumes to ward off ghosts', '2020-11-12', '2020-11-05 04:12:46', '2020-11-05 04:12:46'),
+(7, 'Office2', 'Halloween is a holiday celebrated each year on October 31, and Halloween 2020 will occur on Saturday, October 31. The tradition originated with the ancient Celtic festival of Samhain, when people would light bonfires and wear costumes to ward off ghosts', '2020-11-28', '2020-11-26 07:55:24', '2020-11-26 07:55:55'),
+(8, 'Office3', 'Halloween is a holiday celebrated each year on October 31, and Halloween 2020 will occur on Saturday, October 31. The tradition originated with the ancient Celtic festival of Samhain, when people would light bonfires and wear costumes to ward off ghosts', '2020-11-16', '2020-11-26 08:35:33', '2020-11-26 08:35:33'),
+(9, 'বাংলা কবিতা', 'বাংলা-কবিতা ডট কম ওয়েবসাইটটি বর্তমান সময়ে বাংলা কবিতার সবচেয়ে জনপ্রিয় ও সমৃদ্ধ ওয়েব পোর্টাল। এ প্রজন্মের শতাধিক কবি আমাদের কবিতার আসরে প্রতিদিন কবিতা প্রকাশ করছেন। কবিতা প্রকাশের পাশাপাশি রয়েছে কবি ও কবিতার উপর নানারকম আলোচনা, কবিতার বই ও আবৃত্তি প্রকাশের সুবিধা। উপস্থিত সদস্যেরা যেমন সমমনা কবি ও সদস্যদের সাথে পরিচিত হতে পারছেন, পাশাপাশি ওয়েবসাইটের সার্বিক আবহে ঋদ্ধ হচ্ছেন বাংলা সাহিত্যের কাব্যিক আবেশে। এছাড়াও এখানে রয়েছে বাংলার খ্যাতিমান কবিদের সহস্রাধিক কবিতার এক সংগ্রহশালা, যা নিয়মিত আরও সমৃদ্ধ হচ্ছে। আপনি যদি সৌখিন কবি, আবৃত্তিকার, অথবা কবিতা-প্রেমী যে কেউ হয়ে থাকেন, তবে জানবেন এই ওয়েবসাইটটি আপনার জন্যেই তৈরি করা হয়েছে!', '2020-11-28', '2020-11-26 10:08:49', '2020-11-26 10:08:49');
 
 -- --------------------------------------------------------
 
@@ -467,7 +475,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@a.com', NULL, '$2y$10$ace1.l3DwLgjeRgm9ZGQ4O7b..Kg1C7f3pJQaInoKv7Ob8O3EF2/u', 'uM32yZCt5pdpCawvg5ligTzExPrsaPaLg62eLr23NffPdKIvkz6kautVzG4O', '2020-11-04 04:08:45', '2020-11-04 04:08:45');
+(1, 'Admin', 'admin@a.com', NULL, '$2y$10$ace1.l3DwLgjeRgm9ZGQ4O7b..Kg1C7f3pJQaInoKv7Ob8O3EF2/u', 'O8i3ICnNODAU8XIBfu2vy7yzPBHjV7Siu1ZWWtMGEPRo28CxhUY3QRqd4ztp', '2020-11-04 04:08:45', '2020-11-04 04:08:45');
 
 --
 -- Indexes for dumped tables
@@ -611,7 +619,7 @@ ALTER TABLE `administrations`
 -- AUTO_INCREMENT for table `admissions`
 --
 ALTER TABLE `admissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -683,13 +691,13 @@ ALTER TABLE `missions`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `notices`
 --
 ALTER TABLE `notices`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `shedules`

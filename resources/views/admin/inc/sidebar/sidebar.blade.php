@@ -191,8 +191,9 @@
                         <p>All Images</p>
                      </a>
                   </li>
-               </ul
+               </ul>
             </li>
+
             {{-- <li class="nav-item has-treeview">
                <a href="#" class="nav-link  {{ (request()->is('admin/shedule*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-clock"></i>
@@ -211,6 +212,7 @@
                   
                </ul>
             </li>
+            
             <li class="nav-item has-treeview">
                <a href="#" class="nav-link  {{ (request()->is('admin/dental-college*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-address-card"></i>
@@ -235,12 +237,40 @@
                </ul>
             </li> --}}
 
-            <li class="nav-item has-treeview">
+             <li class="nav-item has-treeview">
+               <a href="#" class="nav-link  {{ (request()->is('admin/dental-college*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-dollar-sign"></i>
+                  <p>
+                     bKash
+                     <i class="fas fa-angle-left right"></i>
+                  </p>
+               </a>
+               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/dental-college*')) ? 'block' : 'none' }}">
+                  <li class="nav-item">
+                     <a href="{{route("category.index")}}" class="nav-link  {{ (request()->is('admin/dental-college/category')) ? 'active' : '' }}">
+                        <i class="nav-icon far fa-circle"></i>
+                        <p> bKash Info</p>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="{{route("post.index")}}" class="nav-link  {{ (request()->is('admin/dental-college/post')) ? 'active' : '' }}">
+                        <i class="nav-icon far fa-circle"></i>
+                        <p> bKash Payment</p>
+                     </a>
+                  </li>
+               </ul>
+            </li>
+
+
+
+
+
+            {{-- <li class="nav-item has-treeview">
                <a class="nav-link" href="{{ url('news') }}">
                   <i class="fas fa-newspaper"></i>
                      <p>News </p>                          
                </a>      
-            </li>
+            </li> --}}
          </ul>
       </nav>
       <!-- /.sidebar-menu -->

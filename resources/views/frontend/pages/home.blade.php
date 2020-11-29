@@ -62,18 +62,26 @@
                 <p>{{ $about->title }}</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6 wrap-about py-5 wrap-about bg-light">
-                <div class="text px-4 ftco-animate">
+        <div class="row ustify-content-center">
+            <div class="col ftco-animate m-1 bg-light">
+                <div class="text p-4 ftco-animate">
                     <p>
                         {{ \Illuminate\Support\Str::limit($about->description, $limit = 600, $end = '...') }}
                     </p>
                     <p class="mt-3"><a href="{{ route('aboutus') }}" class="btn btn-secondary px-4 py-3">Read More</a></p>
                 </div>
             </div>
-            <div class="col-md-6">
-            <img src="{{ url('storage/about/'.$about->image) }}" alt="" class="img-fluid">
+             <div class="col ftco-animate m-1 bg-light">
+                <div class="text p-4 ftco-animate">
+                    <p>
+                        {{ \Illuminate\Support\Str::limit($about->description, $limit = 600, $end = '...') }}
+                    </p>
+                    <p class="mt-3"><a href="{{ route('aboutus') }}" class="btn btn-secondary px-4 py-3">Read More</a></p>
+                </div>
             </div>
+           {{--  <div class="col-md-6">
+               <img src="{{ url('storage/about/'.$about->image) }}" alt="" class="img-fluid">
+            </div> --}}
         </div>
     </div>
 </section>    
@@ -104,6 +112,7 @@
                     
                 </div>
             </div>
+
         </div>
     </div>
 </section>

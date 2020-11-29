@@ -136,6 +136,11 @@
         <script src="{{ asset('frontend/js/main.js') }}"></script>
         {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> --}}
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173915820-1"></script>
+
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0" nonce="m1e9xkyb"></script>
+
+        
         @stack('js')
         
     </body>
