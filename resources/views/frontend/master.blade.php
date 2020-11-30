@@ -140,6 +140,23 @@
         <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0" nonce="m1e9xkyb"></script>
 
+
+<script type="text/javascript">
+      window.setTimeout(function() {
+          $(".alert").fadeTo(500, 0).slideUp(500, function(){
+              $(this).remove(); 
+          });
+      }, 5000);
+   </script>
+
+   <script type="text/javascript">
+      $(".alert").each(function(){
+        var txt =  $(this).text().replace(/\s+/g,' ').trim() ;
+        $(this).text(txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+      });
+   </script>
+
+
         
         @stack('js')
         

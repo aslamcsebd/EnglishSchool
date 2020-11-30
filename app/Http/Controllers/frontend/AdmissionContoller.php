@@ -82,9 +82,10 @@ class AdmissionContoller extends Controller
         //      $mssg->to('forkanalam295@gmail.com','to Forkan')->subject('Testing Email');
         //      $mssg->from('793c39ca34-fed76a@inbox.mailtrap.io','forkan');
         // });
-        Mail::to($request->email)->send(new AdmissionMail());
-
-        return redirect()->back(); 
+        //Mail::to($request->email)->send(new AdmissionMail());
+        
+        return back()->with('success','Information add successfully');
+        //return redirect()->back(); 
     }
     public function all(){
         $data['applications'] = Admission::latest()->get();

@@ -4,6 +4,12 @@
 @endpush
 @section('content')
 <div class="container">
+
+   @if (session('success'))
+      <div class="alert alert-success text-center">
+         <strong>Success!</strong> {{ session('success') }}
+      </div>
+   @endif  
    
    <form action="{{ route('admission.store') }}" method="POST">
       @csrf
@@ -31,7 +37,7 @@
                <label for="">Date of Birth</label>
                <input type="date" class="form-control" placeholder="Your Date of birth" name="dob" value="{{ old('dob') }}">
                @error('dob')
-               <div class="alert alert-danger p-1" style="font-size: 10px">{{ $message }}</div>
+                  <div class="alert alert-danger p-1" style="font-size: 10px">{{ $message }}</div>
                @enderror
             </div>
             <div class="form-group">

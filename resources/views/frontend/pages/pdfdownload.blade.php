@@ -70,35 +70,35 @@
         {{-- <div class="box"></div> --}}
         <img src="{{ asset('admin/image/box.png') }}" alt="this is an image" width="130" class="p-0 m-0 box">
 
-     </div>
-    
+     </div>    
     <div class="body">
         <h1 class="watermark">ADDMISSION FORM</h1>
         <div>
-            <span >Full Name: (In Capital Letter)</span><input type="text" style="width:450px" value=""> <br>
+            <span >Full Name: (In Capital Letter)</span><input type="text" style="width:450px" value="{{$name_eng}}"> <br>
         </div>
     <div style="margin-left: 81px">
-        <span style=""> (In Bangla)</span><input type="text" style="width:535px" value="">
-    
-    </div>
+        <span style=""> (In Bangla)</span><input type="text" style="width:535px" value="">    
+    </div>    
     <div>
-        <span>Date of Birth:</span><input type="text" style="width: 100px" value=""> 
-        <span>Age:</span><input type="text" style="width:70px" value="">
-    <span>Year:</span><input type="text" style="width:70px" value="">
-        <span>Month:</span><input type="text" style="width:70px" value="">
-    <span>Day:</span><input type="text" style="width:86px" value="">
+        <span>Date of Birth:</span><input type="text" style="width: 100px" value="{{ $dob }}"> 
+        <span>Age:</span><input type="text" style="width:70px" value="{{ $age }}">
+    <span>Year:</span><input type="text" style="width:70px" value="{{date('Y', strtotime($dob))}}">
+        <span>Month:</span><input type="text" style="width:70px" value="{{date('F', strtotime($dob))}}">
+    <span>Day:</span><input type="text" style="width:86px" value="{{date('d', strtotime($dob))}}">
     </div>
+
     <div>
     <span>Nationality:</span><input type="text" style="width: 270px" value=""> 
         <span>Religion:</span><input type="text" style="width:100px" value="">
         <span>Caste:</span><input type="text" style="width:100px" value="">
     </div>
     <div>
-        <span>Name of Father:</span><input type="text" style="width: 240px" value=""> 
+        <span>Name of Father:</span><input type="text" style="width: 240px" value="{{$father_name_eng}}"> 
         <span>(In Bangla):</span><input type="text" style="width:240px" value="">
     </div>
     <div>
-        <span>Name of Mother:</span><input type="text" style="width: 240px" value=""> 
+
+        <span>Name of Mother:</span><input type="text" style="width: 240px" value="{{$mother_name_eng}}"> 
         <span>(In Bangla):</span><input type="text" style="width:240px" value="">
     </div>
     <div>

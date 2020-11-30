@@ -18,6 +18,7 @@ class CreateBlankFormsTable extends Migration
             $table->string('name_eng');
             $table->string('father_name_eng');
             $table->string('mother_name_eng');
+            $table->date('dob');
             $table->timestamps();
         });
     }
