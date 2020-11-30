@@ -200,7 +200,7 @@
             </div>
             <div class="form-group">
                <input type="submit" value="Apply" class="btn btn-info py-3 px-5">
-               <a href="{{ route('downloadform') }}" class="btn btn-success py-3 px-5" target="__blank">Download Form</a>
+               <a href="{{ url('downloadForm') }}" class="btn btn-success py-3 px-5" target="__blank">Download Form</a>
             </div>
 
             @php

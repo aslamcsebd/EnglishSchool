@@ -2,26 +2,32 @@
 @section('content')
 <section class="ftco-section">
     <div class="container">
-        <div class="row justify-content-center mb-5 pb-2">
+        <div class="row justify-content-center">
             <div class="col-md-8 text-center heading-section ftco-animate">
                 <h2 class="mb-4"><span>Today's</span> Birthday</h2>                
             </div>
-
-            <div class="row justify-content-center mb-5 pb-2">
-               <div class="col-6 text-center heading-section">
-                  <img src="{{ asset('image/birthday.png') }}" alt="" class="img-fluid" idth="100%" height="160">
-               </div>
-            </div>
+         </div>
+         <div class="row justify-content-center">
+               <img src="{{ asset('image/birthday.png') }}" alt="" class="responsive text-center" width="300" height="100">
+         </div>
+         <div class="row justify-content-center">
+            <div class="text-center">
                @php
                   $birthdays = App\birthday::all();
                @endphp
-               @foreach($birthdays as $birthday)
-                 
-                    <p><h2>{{$birthday->title}}</h2></p>
 
-                    <p><h2>{{$birthday->name}}</h2></p>
+               <style type="text/css">
+                  h1{ font-size: 25px; }
+                  .name{font-weight: 600; color: #fda638; }
+               </style>
+
+               @foreach($birthdays as $birthday)
+                    <h1>{{$birthday->title}}</h1>
+                    <h1 class="name">{{$birthday->name}}</h1>
                @endforeach
            </div>
+        </div>
+        </div>
     </div>
 </section>
 @endsection

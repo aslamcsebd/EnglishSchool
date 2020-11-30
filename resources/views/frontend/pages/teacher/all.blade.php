@@ -8,7 +8,7 @@
                
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             @foreach ($directors->take('4') as $director)
             
             @foreach ($director->categories as $cat)
@@ -16,36 +16,21 @@
                 @if ($cat->name != 'Principal')
                     @if ($cat->name != 'Managing director')
                      @if ($cat->name != 'Director')
-                 
-                
-                
-                
+
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="staff">
                             <div class="img-wrap d-flex align-items-stretch">
-                             <div class="img align-self-stretch" style="background-image: url({{ asset('storage/doctorImage/'.$director->image) }});"> </div>
+                             <div class="img align-self-stretch" style="background-image: url({{ asset('image/'.$director->image) }});"> </div>
                             </div>
                             <div class="text pt-3 text-center">
-                                <a href="{{ route('schoolteacher.show',$director->id) }}"><h3>{{ $director->name }}</h3></a>
+                                <a ref="{{ route('schoolteacher.show',$director->id) }}"><h3>{{ $director->name }}</h3></a>
+                                <span class="position mb-2">{{ $cat->name }}</span>
                                 <span class="position mb-2">{{ $cat->name }}</span>
                                 <div class="faded">
                                     <p>{{ 
                                      \Illuminate\Support\Str::limit($director->desc, $limit = 130, $end = '...')
                                     }}</p>
-                                    @if ($director->fb || $director->twitter || $director->instagram)
-                                    <ul class="ftco-social text-center">
-                                        @if ($director->fb)
-                                        <li class="ftco-animate"><a href="{{ $director->fb }}"><span class="icon-facebook" target="blank"></span></a></li>
-                                        @endif
-                                        @if ($director->twitter)
-                                        <li class="ftco-animate"><a href="{{ $director->twitter }}"><span class="icon-twitter"></span></a></li>
-                                        @endif
-                                        @if ($director->instagram)
-                                        <li class="ftco-animate"><a href="{{ $director->instagram }}"><span class="icon-instagram"></span></a></li>
-                                        @endif
-                                        
-                                    </ul>
-                                            @endif
+                                    
                                         @endif
                                     @endif
                                 </div>
@@ -84,7 +69,7 @@
                                 <div class="img align-self-stretch" style="background-image: url({{ asset('storage/doctorImage/'.$director->image) }});"></div>
                             </div>
                             <div class="text pt-3 text-center">
-                                <a href="{{ route('schoolteacher.show',$director->id) }}"><h3>{{ $director->name }}</h3></a>
+                                <a ref="{{ route('schoolteacher.show',$director->id) }}"><h3>{{ asset('image/'.$director->image)  }}</h3></a>
                                 <span class="position mb-2">{{ $cat->name }}</span>
                                 <div class="faded">
                                     <p>{{ 
