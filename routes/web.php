@@ -67,3 +67,13 @@ Route::post('Add_Payment_Number', 'PaymentController@Add_Payment_Number')->name(
 // Form
 Route::get('downloadForm','PaymentController@downloadForm')->name('downloadForm');
 Route::post('blankForm','PaymentController@blankForm')->name('blankForm');
+Route::post('fillUpForm','PaymentController@fillUpForm')->name('fillUpForm');
+
+// Principal's Message
+
+Route::get('PrincipalSMS','PrincipalSMSController@PrincipalSMS')->name('PrincipalSMS');
+Route::post('UpdatePrincipalSMS','PrincipalSMSController@UpdatePrincipalSMS')->name('UpdatePrincipalSMS');
+
+// birthday
+
+Route::get('birthday','PrincipalSMSController@birthday')->name('birthday');

@@ -14,7 +14,7 @@ class NewsController extends Controller
       return view('admin.pages.news.index', $data);      
     }
 
-    public function editNews(Request $request){ 
+   public function editNews(Request $request){ 
 
       News::find($request->id)->update([
          'title'=>$request->title,    

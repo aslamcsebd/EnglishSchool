@@ -53,6 +53,69 @@
     </div>
 </section>
 
+<section id="about" class="my-5">
+    <div class="container">
+
+      <div class="row justify-content-center mb-5">
+            <div class="col-md-8 text-center heading-section ftco-animate ">
+                <h2 class="mb-1"><span>Principal's </span>Message...</h2>
+            </div>
+        </div>
+
+         @php
+            $PrincipalSMSs = App\PrincipalSMS::all();
+         @endphp
+
+         @foreach($PrincipalSMSs as $PrincipalSMS)
+
+         <style type="text/css">
+            .sms .float-left {
+                font-size: 25px;
+                font-weight: 600;
+                color: #fda638;
+            }
+            .left {
+                font-size: 22px;
+                font-weight: 300;
+                text-align: right;
+            }
+         </style>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col text-center heading-section">
+               <img src="{{ asset('image/photo.jpg') }}" alt="" class="img-fluid" idth="100%" height="20">
+            </div>
+        </div>
+        <div class="row ustify-content-center sms">
+            <div class="col-9 ftco-animate m-1" style="background-color: #ffffe0;">
+                  <p lass="float-left">Principal's Message...</p> <br> 
+                <div class="text ftco-animate">
+                  <p>
+                        {{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 1600, $end = '...') }}
+                  </p>
+               </div>
+               <div class="row">
+                  <div class="col-3 ftco-animate m-1 bg-light">
+                     <img src="{{ asset('image/signature.png') }}" alt="" class="img-fluid">                 
+                     <h2 class="mb-1"><span>{{$PrincipalSMS->teacherName}}</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="col ftco-animate m-1" style="background-color: #7f00ff">
+               <div class=" p-4 ftco-animate">
+                    <p class="text-white left">{{ \Illuminate\Support\Str::limit($PrincipalSMS->rightSide, $limit = 600, $end = '...') }}</p>
+                                      
+                </div>
+            </div>
+        </div>
+
+      @endforeach
+    </div>
+</section>  
+
+
+
+
 @if ($about)
 <section id="about" class="my-5">
     <div class="container">
@@ -73,15 +136,14 @@
             </div>
              <div class="col ftco-animate m-1 bg-light">
                 <div class="text p-4 ftco-animate">
-                    <p>
-                        {{ \Illuminate\Support\Str::limit($about->description, $limit = 600, $end = '...') }}
-                    </p>
-                    <p class="mt-3"><a href="{{ route('aboutus') }}" class="btn btn-secondary px-4 py-3">Read More</a></p>
+                  <img src="{{ asset('image/school_building.jpg') }}" alt="" class="img-fluid" width="100%" height="">
+                  
                 </div>
             </div>
-           {{--  <div class="col-md-6">
-               <img src="{{ url('storage/about/'.$about->image) }}" alt="" class="img-fluid">
-            </div> --}}
+            {{-- <div class="col-md-6"> --}}
+               {{-- <img src="{{ url('storage/about/'.$about->image) }}" alt="" class="img-fluid"> --}}
+
+            </div>
         </div>
     </div>
 </section>    

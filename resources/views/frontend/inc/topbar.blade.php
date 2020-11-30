@@ -56,6 +56,9 @@
             <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}"><a href="{{ route('aboutus') }}" class="nav-link">About</a></li>
             <li class="nav-item {{ (request()->is('schoolteacher')) ? 'active' : '' }}"><a href="{{ route('schoolteacher.index') }}" class="nav-link">Teachers</a></li>
             <li class="nav-item {{ (request()->is('schoolnotice')) ? 'active' : '' }}"><a href="{{ route('schoolnotice.index') }}" class="nav-link">Notice Board</a></li>
+
+            <li class="nav-item {{ (request()->is('curricular')) ? 'active' : '' }}"><a href="{{ route('birthday') }}" class="nav-link">Birthdays Today</a></li>
+
             <li class="nav-item {{ (request()->is('curricular')) ? 'active' : '' }}"><a href="{{ route('curricular') }}" class="nav-link">Curricular Activities</a></li>
             <li class="nav-item {{ (request()->is('gallery')) ? 'active' : '' }}"><a href="{{ route('gallery') }}" class="nav-link">Gallery</a></li>
             <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>

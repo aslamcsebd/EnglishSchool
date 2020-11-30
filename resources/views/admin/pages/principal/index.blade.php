@@ -6,52 +6,69 @@
 @endpush
 @section('content')
     {{-- <cat></cat> --}}
-    <div class="row">
-        <div class="col-12 offset-md-3 col-md-6 mt-4">
+    <div class="row justify-content-center">
+        <div class="col-10 mt-4">
             <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Add News</h3>
+                  <h3 class="card-title">Add Principal's Message</h3>
                 </div>
-                <!-- /.card-header -->
-                {{-- @if (count($errors) > 0) --}}
-                  {{-- <div class="error text-danger">
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div> --}}
                   @error('cat_name')
                     <div class="alert alert-danger">{{ $message }}</div>
                   @enderror
                 {{-- @endif --}}
                 <!-- form start -->
-                <form role="form" method="POST" action="{{ url('editNews') }}">
+                <form role="form" method="POST" action="{{ url('UpdatePrincipalSMS') }}">
                     @csrf
                   <div class="card-body">
-                     @foreach($allNews as $news)
+                     @php
+                        $PrincipalSMSs = App\PrincipalSMS::all();
+                     @endphp
 
-                     <input type="hidden" name="id" value="{{ $news->id }}">                     
+                     @foreach($PrincipalSMSs as $PrincipalSMS)
+
+                     <input type="hidden" name="id" value="{{ $PrincipalSMS->id }}">                     
                                    
                     <div class="form-group">
-                      <label for="exampleInputEmail1"></label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" value="{{ $news->title }}" placeholder="Title" name="title">
+                      <label for="exampleInputEmail1">Title</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="{{ $PrincipalSMS->title }}" placeholder="Title" name="title">
                     </div>
 
-                   <div class="form-group">
-                       <label for="my-textarea">Message</label>
-                       <textarea id="my-textarea" class="form-control" placeholder="Insert News" name="message" rows="5">{{ $news->message }}</textarea>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Left Side</label>
+                      <textarea type="text" class="form-control" id="exampleInputEmail1" value="" placeholder="Left Side" name="leftSide" rows="4">{{ $PrincipalSMS->leftSide }}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Right Side</label>
+                      <textarea type="text" class="form-control" id="exampleInputEmail1" value="" placeholder="Right Side" name="rightSide" rows="4">{{ $PrincipalSMS->rightSide }}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Principal Name</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="{{ $PrincipalSMS->teacherName }}" placeholder="Principal Name" name="teacherName">
+                    </div>
+
+                    <div class="form-group">
+                       <label for="my-input">Principal Image</label>
+                       <input id="my-input" class="form-control-file" type="file" name="image" value="{{ $PrincipalSMS->image }}">
+                       @error('image')
+                       <div class="alert alert-danger">{{ $message }}</div>
+                       @enderror
                    </div>
-                    @endforeach
-                  </div>
-                  <!-- /.card-body -->
+
+                   <img src="{{ $PrincipalSMS->image }}">
+                       
+                   </div>
+                   
 
                   <div class="card-footer float-right" role="group" aria-label="Basic example">
                     <a href="{{route("category.home")}}" class="btn btn-danger tn-outline-light">Cancel</a>
                     <button type="submit" class="btn btn-success tn-outline-light">Update</button>
-                  </div>
+                  </div>  
 
-                  
+                  @endforeach
+               </div>
+
                 </form>
               </div>
         </div>       

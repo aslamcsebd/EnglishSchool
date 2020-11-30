@@ -256,9 +256,9 @@
             </li>
 
             <li class="nav-item has-treeview">
-               <a class="nav-link" href="{{ url('news') }}">
+               <a class="nav-link" href="{{ url('PrincipalSMS') }}">
                   <i class="fas fa-newspaper"></i>
-                     <p>News </p>                    
+                     <p>Principal's Message</p>                    
                </a>      
             </li>
          </ul>

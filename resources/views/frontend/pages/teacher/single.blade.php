@@ -15,7 +15,7 @@
                             <div class="col-6">
                                 <div class="img-wrap d-flex align-items-stretch">
                                     <div class="img align-self-stretch" style="
-                                    background-image: url({{ asset('storage/doctorImage/'.$director->image) }});"></div>
+                                    background-image: url({{ asset('frontend/images/person_4.jpg') }});"></div>
                                 </div>
                             </div>
                             <div class="col-6">
