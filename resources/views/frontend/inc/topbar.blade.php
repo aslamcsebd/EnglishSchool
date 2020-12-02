@@ -1,4 +1,83 @@
-<div class="py-2" style="background-color: rgb(111, 32, 111)">
+<nav class="navbar navbar-expand-md navbar-light shadow-sm">
+
+   {{-- <a class="navbar-brand" href="{{ url('/home') }}">
+      {{ config('app.name', 'None') }}
+   </a> --}}
+
+   <style type="text/css">
+      .slogan{ color: #31BEF2; font-weight: 400; font-size: 14px; margin-left: -15px; line-height: -21px;} 
+      /*.right{ margin-top: -50px; } */
+   </style>
+      <a class="navbar-brand" href="index.html">
+         <img src="{{ url('admin/image/logo.png') }}" alt="" class='img-fluid' width="75" height="80">
+         <span class="slogan text-center">Learners Today</span> <br>
+         <span class="slogan text-center right">Leaders Tomorrow</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+      <span class="navbar-toggler-icon">Menu</span>
+      </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Center Side Of Navbar -->
+
+      <ul class="navbar-nav ml-auto">
+         <li class="nav-item">
+            <h3 class="text-center h2 mt-2 hadow-sm"  style="color: #F7941E;">National English School</h3>
+            <h3 class="text-center h2 hadow-sm float-left"  style="color: #F7941E; margin-top: -16px">Chittagong</h3>
+         </li>
+
+         <li>
+            <style>
+               .vl {
+                 border-left: 1px solid #7f8c8d;
+                 height: 80px; margin: 15px 5px 0 8px;
+               }
+            </style>
+            <div class="vl"></div>
+         </li>
+         <li>
+            <h1 style="color: #F7941E; font-weight: 500; font-size: 45px; padding-top: 20px;">NESC</h1>
+         </li>
+      </ul>
+
+      <!-- Right Side Of Navbar -->
+      <style type="text/css">
+         .last{ width: 400px; }
+         .last{ display: inline; }
+      </style>
+
+      <ul class="navbar-nav ml-auto last p-2 m-0" style="background-color: rgb(111, 32, 111);">
+         <li lass="nav-item">
+            <div class="d-flex topper align-items-center">
+               <div class="icon bg-fifth mr-2 d-flex justify-content-center align-items-center">
+                  <span class="icon-map"></span>
+               </div>
+               <span class="text">130, Chatteswari Road, Chawkbazar, Chittagong <br>
+                  (Medical College Hostel Gate in Ops)</span>
+            </div>
+         </li>   
+
+         <li lass="nav-item">  
+            <div class="d-flex topper align-items-center">
+               <div class="icon bg-secondary mr-2 d-flex justify-content-center align-items-center">
+                  <span class="icon-paper-plane"></span>
+               </div>
+                  <span class="text">nesc.bd@gmail.com</span>
+            </div>
+         </li>
+
+         <li class="nav-item">
+               <div class=" mt-2 d-flex topper align-items-center">
+                  <div class="icon bg-tertiary mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+                  <span class="text">031-269065, 01700-616761</span>
+               </div>
+         </li>
+
+      </ul>
+   </div>
+</nav>
+
+<div class="py-2" style="background-color: rgb(111, 32, 111); display: none;">
    <div class="container">
       <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
          <div class="col-lg-12 d-block">
@@ -20,6 +99,7 @@
       </div>
    </div>
 </div>
+
 <div class="acme-news-ticker">
 
    @php
@@ -38,18 +118,9 @@
    </div>
    @endforeach
 </div>
-<div class="bg-white">
-   <div class="container">
-      <h2 class="text-center h2 mt-2 shadow-sm"  style="color: #F7941E">National English School Chittagong</h2>
-      <div class="p text-center" style="color: #31BEF2">Learners Today Leaders Tomorrow</div>
-   </div>
-</div>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
-   <div class="container d-flex align-items-center">
-      <a class="navbar-brand" href="index.html"><img src="{{ url('admin/image/logo.png') }}" alt="" class='img-fluid' width="75" height="80"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="oi oi-menu"></span> Menu
-      </button>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light p-4" id="ftco-navbar">
+   <div class="container d-flex align-items-center">     
       <div class="collapse navbar-collapse" id="ftco-nav">
          <ul class="navbar-nav ml-auto">
             <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}"><a href="{{ route('homes') }}" class="nav-link pl-0">Home</a></li>
@@ -64,8 +135,9 @@
             <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
             {{-- <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}"><a href="{{ route('downloadForm') }}" class="nav-link bg-info"><span class="text-white">Download Form</span></a></li> --}}
             
-            <li class="nav-item"><a href="{{ route('admission.index') }}" class="nav-link bg-dark"><span class="text-white">Apply Now</span></a></li>
+            <li class="nav-item"><a href="{{ route('admission.index') }}" class="nav-link bg-dark"><span class="text-white">Admission</span></a></li>
          </ul>
       </div>
    </div>
 </nav>
+

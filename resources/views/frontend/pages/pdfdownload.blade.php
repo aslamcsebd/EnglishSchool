@@ -176,7 +176,7 @@
     </div>
     <div class="" style="background-color:#FFE6C8; padding: 10px;">
         <p class="text-center p-0 m-0">Items to be submitted with application</p>
-        <span class="text-center d-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet voluptatibus saepe cum dignissimos neque doloribus laboriosam doloremque quas cumque?</span>
+        <span class="text-center d-block">Admission Requirnment Note</span>
 
     </div>
     <h6 style="color: 413F7F" class="text-center">[FOR OFFICIAL USE]</h6>

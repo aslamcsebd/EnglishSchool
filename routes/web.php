@@ -24,7 +24,7 @@ Route::resource('schoolnotice','frontend\NoticeController');
 Route::resource('schoolteacher','frontend\TeacherController');
 
 Route::prefix('admin')->group(function(){
-    Route::group(['middleware' => 'auth'],function () {
+   Route::group(['middleware' => 'auth'],function () {
         Route::resource('teacher-category', 'Admin\categoryController');
         Route::resource('curricular', 'Admin\CurricularController');
         Route::resource('appointment', 'Admin\AppointmentController');
