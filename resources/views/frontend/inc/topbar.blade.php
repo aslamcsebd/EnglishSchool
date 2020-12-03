@@ -5,13 +5,13 @@
    </a> --}}
 
    <style type="text/css">
-      .slogan{ color: #31BEF2; font-weight: 400; font-size: 14px; margin-left: -15px; line-height: -21px;} 
-      /*.right{ margin-top: -50px; } */
+      .slogan{ color: #31BEF2; font-weight: 400; font-size: 14px; } 
+      .right{ padding-top: -50px;} 
    </style>
       <a class="navbar-brand" href="index.html">
          <img src="{{ url('admin/image/logo.png') }}" alt="" class='img-fluid' width="75" height="80">
-         <span class="slogan text-center">Learners Today</span> <br>
-         <span class="slogan text-center right">Leaders Tomorrow</span>
+         <span class="slogan text-center pl-4">Learners Today</span> <br>
+         <span class="slogan text-center right pl-3">Leaders Tomorrow</span>
       </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -72,7 +72,6 @@
                   <span class="text">031-269065, 01700-616761</span>
                </div>
          </li>
-
       </ul>
    </div>
 </nav>
@@ -101,7 +100,6 @@
 </div>
 
 <div class="acme-news-ticker">
-
    @php
       $OneNotices = App\Admin\Notice::latest()->get();
    @endphp
@@ -119,25 +117,32 @@
    @endforeach
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light p-4" id="ftco-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
    <div class="container d-flex align-items-center">     
       <div class="collapse navbar-collapse" id="ftco-nav">
          <ul class="navbar-nav ml-auto">
+
             <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}"><a href="{{ route('homes') }}" class="nav-link pl-0">Home</a></li>
-            <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}"><a href="{{ route('aboutus') }}" class="nav-link">About</a></li>
+           
+            <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}"><a href="{{ route('aboutus') }}" class="nav-link">About Us</a></li>
+
+            <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}"><a ref="{{ route('aboutus') }}" class="nav-link">Academics</a></li>
+
+            <li class="nav-item {{ (request()->is('gallery')) ? 'active' : '' }}"><a href="{{ route('gallery') }}" class="nav-link">Gallery</a></li>
+            
             <li class="nav-item {{ (request()->is('schoolteacher')) ? 'active' : '' }}"><a href="{{ route('schoolteacher.index') }}" class="nav-link">Teachers</a></li>
+            
             <li class="nav-item {{ (request()->is('schoolnotice')) ? 'active' : '' }}"><a href="{{ route('schoolnotice.index') }}" class="nav-link">Notice Board</a></li>
 
+            <li class="nav-item"><a href="{{ route('admission.index') }}" class="nav-link"><span class="ext-white">Admission</span></a></li>
+         
+            <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
+            
             <li class="nav-item {{ (request()->is('curricular')) ? 'active' : '' }}"><a href="{{ route('birthday') }}" class="nav-link">Birthdays Today</a></li>
 
-            <li class="nav-item {{ (request()->is('curricular')) ? 'active' : '' }}"><a href="{{ route('curricular') }}" class="nav-link">Curricular Activities</a></li>
-            <li class="nav-item {{ (request()->is('gallery')) ? 'active' : '' }}"><a href="{{ route('gallery') }}" class="nav-link">Gallery</a></li>
-            <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
-            {{-- <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}"><a href="{{ route('downloadForm') }}" class="nav-link bg-info"><span class="text-white">Download Form</span></a></li> --}}
+            <li class="nav-item {{ (request()->is('curricular')) ? 'active' : '' }}"><a href="{{ route('curricular') }}" class="nav-link">Curricular Activities</a></li>            
             
-            <li class="nav-item"><a href="{{ route('admission.index') }}" class="nav-link bg-dark"><span class="text-white">Admission</span></a></li>
          </ul>
       </div>
    </div>
 </nav>
-

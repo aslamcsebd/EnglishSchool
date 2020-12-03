@@ -5,74 +5,73 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/toastr/toastr.min.css') }}">
 @endpush
 @section('content')
-    {{-- <cat></cat> --}}
-    <div class="row justify-content-center">
-        <div class="col-10 mt-4">
+
+   @php
+      $PrincipalSMSs = App\PrincipalSMS::all();
+   @endphp
+
+   @foreach($PrincipalSMSs as $PrincipalSMS)
+
+      <div class="row justify-content-center">
+         <div class="col-10 mt-4">
             <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Add Principal's Message</h3>
-                </div>
-                  @error('cat_name')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                  @enderror
-                {{-- @endif --}}
-                <!-- form start -->
-                <form role="form" method="POST" action="{{ url('UpdatePrincipalSMS') }}">
-                    @csrf
-                  <div class="card-body">
-                     @php
-                        $PrincipalSMSs = App\PrincipalSMS::all();
-                     @endphp
-
-                     @foreach($PrincipalSMSs as $PrincipalSMS)
-
-                     <input type="hidden" name="id" value="{{ $PrincipalSMS->id }}">                     
-                                   
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Title</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" value="{{ $PrincipalSMS->title }}" placeholder="Title" name="title">
-                    </div>
-
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Left Side</label>
-                      <textarea type="text" class="form-control" id="exampleInputEmail1" value="" placeholder="Left Side" name="leftSide" rows="4">{{ $PrincipalSMS->leftSide }}</textarea>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Right Side</label>
-                      <textarea type="text" class="form-control" id="exampleInputEmail1" value="" placeholder="Right Side" name="rightSide" rows="4">{{ $PrincipalSMS->rightSide }}</textarea>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Principal Name</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" value="{{ $PrincipalSMS->teacherName }}" placeholder="Principal Name" name="teacherName">
-                    </div>
-
-                    <div class="form-group">
-                       <label for="my-input">Principal Image</label>
-                       <input id="my-input" class="form-control-file" type="file" name="image" value="{{ $PrincipalSMS->image }}">
-                       @error('image')
-                       <div class="alert alert-danger">{{ $message }}</div>
-                       @enderror
-                   </div>
-
-                   <img src="{{ $PrincipalSMS->image }}">
-                       
-                   </div>
-                   
-
-                  <div class="card-footer float-right" role="group" aria-label="Basic example">
-                    <a href="{{route("category.home")}}" class="btn btn-danger tn-outline-light">Cancel</a>
-                    <button type="submit" class="btn btn-success tn-outline-light">Update</button>
-                  </div>  
-
-                  @endforeach
+               <div class="card-header">
+                  <h3 class="card-title">{{ $PrincipalSMS->title }}</h3>
                </div>
+               @error('cat_name')
+                  <div class="alert alert-danger">{{ $message }}</div>
+               @enderror
+               <form role="form" method="POST" action="{{ url('UpdatePrincipalSMS') }}">
+                  @csrf
+                  <div class="card-body">
+                     <input type="hidden" name="id" value="{{ $PrincipalSMS->id }}">
+                     
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Title</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="{{ $PrincipalSMS->title }}" placeholder="Title" name="title">
+                     </div>
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Left Side</label>
+                        <textarea type="text" class="form-control" id="exampleInputEmail1" value="" placeholder="Left Side Message" name="leftSide" rows="4">{{ $PrincipalSMS->leftSide }}</textarea>
+                     </div>
 
-                </form>
-              </div>
-        </div>       
-    </div>
+                     @if($PrincipalSMS->rightSide!=null)
+                        <div class="form-group">
+                           <label for="exampleInputEmail1">Right Side</label>
+                           <textarea type="text" class="form-control" id="exampleInputEmail1" value="" placeholder="Right Side Message" name="rightSide" rows="4">{{ $PrincipalSMS->rightSide }}</textarea>
+                        </div>
+                     @endif
+
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" value="{{ $PrincipalSMS->name }}" placeholder="Name" name="name">
+                     </div>
+                     <div class="form-group">
+                        <div>
+                           <img src="{{ $PrincipalSMS->image }}" width="120"> <br>
+                           <span >Present Image</span>
+                        </div>
+
+                        <label for="my-input">Upload New Image</label>
+                        <input id="my-input" class="form-control-file" type="file" name="image" value="{{ $PrincipalSMS->image }}">
+                        @error('image')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
+                     </div>
+                  </div>
+                  
+                  <div class="card-footer float-right" role="group" aria-label="Basic example">
+                     <a href="{{route("category.home")}}" class="btn btn-danger tn-outline-light">Cancel</a>
+                     <button type="submit" class="btn btn-success tn-outline-light">Update</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   @endforeach
+
+
 @endsection
 @push('js')
     <script src="{{asset('admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>

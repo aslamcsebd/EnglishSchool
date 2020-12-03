@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 28, 2020 at 03:07 AM
+-- Generation Time: Dec 03, 2020 at 11:27 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -111,7 +111,66 @@ CREATE TABLE `admissions` (
 
 INSERT INTO `admissions` (`id`, `email`, `name_eng`, `name_bng`, `dob`, `nationality`, `religion`, `father_name_eng`, `father_name_bng`, `mother_name_eng`, `mother_name_bng`, `per_add`, `mailing_add`, `sla`, `moi`, `last_place`, `find_out`, `curricular`, `challanged`, `father_occupation`, `mother_occupation`, `father_nid`, `mother_nid`, `father_contact`, `mother_contact`, `father_fb`, `mother_fb`, `transports`, `created_at`, `updated_at`) VALUES
 (3, 'forkanalam295@gmail.com', 'asdf', 'asdf', '2020-11-14', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asd', 'asdf', 'asdf', 'sadf', '1', 'asdf', 0, 'sdf', 'asdf', 234234, 23423, '2342342', '34234234', NULL, NULL, '1', '2020-11-13 18:38:20', '2020-11-13 18:38:20'),
-(4, '2a@gmail.com', 'as', 'as', '1994-11-10', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'a@gmail.com', 'fgf', 'fgf', 'fgfg', '1', 'fgfg', 1, 'dsd', 'sds', 22121, 12121, '221', '1212', 'fa.com', 'bf.com', '1', '2020-11-27 20:59:32', '2020-11-27 20:59:32');
+(4, '2a@gmail.com', 'as', 'as', '1994-11-10', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'a@gmail.com', 'fgf', 'fgf', 'fgfg', '1', 'fgfg', 1, 'dsd', 'sds', 22121, 12121, '221', '1212', 'fa.com', 'bf.com', '1', '2020-11-27 20:59:32', '2020-11-27 20:59:32'),
+(5, 'as@gmail.com', 'asas', 'asas', '1994-11-10', 'sdd', 'sdsd', 'sds', 'sdsd', 'sdsd', 'sdsd', 'sds', 'a@gmail.com', 'dsd', 'sd', 'sd', '1', 'ds', 1, 'dsd', 'sds', 122, 121, '121', '12', 'hgh', 'ghgh', '1', '2020-11-28 03:30:29', '2020-11-28 03:30:29'),
+(6, 'asa@gmail.com', 'asas', 'asas', '1994-11-10', 'sdd', 'sdsd', 'sds', 'sdsd', 'sdsd', 'sdsd', 'sds', 'a@gmail.com', 'dsd', 'sd', 'sd', '1', 'ds', 1, 'dsd', 'sds', 122, 121, '121', '12', 'hgh', 'ghgh', '1', '2020-11-28 03:43:32', '2020-11-28 03:43:32'),
+(7, 'aslamhossainctg@gmail.com', 'Aslam', 'Aslam', '1994-10-10', 'Bangladesh', 'Islam', 'Siful Islam', 'Saiful Islam', 'Dalia Begum', 'Dalia Begum', 'Agrabad', 'aslam@gmail.com', 'Dae', 'Bangla', 'Five', '1', 'Playing Footbal', 1, 'Farmer', 'House Wife', 123321, 456654, '0168067293', '01680607293', 'facebook.com/father', 'facebook.com/mother', '1', '2020-11-29 20:59:59', '2020-11-29 20:59:59'),
+(8, 'adfsd@gmail.com', 'aslam', 'sdsd', '2020-10-30', 'aa', 'ghgh', 'cgcg', 'ghghhg', 'Dalia Begum', 'ghgh', 'ghgh', 'asd@gmail.com', 'Dae', 'dfdf', 'fgfg', '1', 'fgfg', 1, 'dfdf', 'df', 123321, 2323, '0168067293', '01680607293', 'fa.com', 'fb2.com', '1', '2020-11-29 21:09:07', '2020-11-29 21:09:07'),
+(9, '2vcva@gmail.com', 'aslam', 'sdsd', '2020-11-04', 'aa', 'aa', 'cgcg', 'ghghhg', 'fgfg', 'ghgh', 'ghgh', 'asd@gmail.com', 'fddf', 'dfdf', 'dfdf', '1', 'fgfg', 1, 'dfdf', 'df', 232, 2323, '323', '232', 'fa.com', 'facebook.com/mother', '1', '2020-11-29 21:11:26', '2020-11-29 21:11:26'),
+(10, '2\'\'bnba@gmail.com', 'aslam', 'sdsd', '2020-10-27', 'aa', 'Islam', 'cgcg', 'Saiful Islam', 'gjgj', 'aa', 'ghgh', 'asd@gmail.com', 'fddf', 'dfdf', 'dfdf', '1', 'fgfg', 1, 'dfdf', 'sds', 232, 2323, '323', '232', 'fa.com', 'fb2.com', '1', '2020-11-29 21:12:44', '2020-11-29 21:12:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `birthdays`
+--
+
+CREATE TABLE `birthdays` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `birthdays`
+--
+
+INSERT INTO `birthdays` (`id`, `title`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Birthday\'s Title', 'Aseed Rafan Rahman - ID - AH-124', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blank_forms`
+--
+
+CREATE TABLE `blank_forms` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name_eng` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `father_name_eng` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mother_name_eng` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dob` date NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `blank_forms`
+--
+
+INSERT INTO `blank_forms` (`id`, `name_eng`, `father_name_eng`, `mother_name_eng`, `dob`, `created_at`, `updated_at`) VALUES
+(1, 'aslam', 'dfdf', 'cgcg', '2018-09-12', '2020-11-29 20:38:06', '2020-11-29 20:38:06'),
+(2, 'aslam', 'dfdf', 'fgfg', '2015-09-09', '2020-11-29 20:38:54', '2020-11-29 20:38:54'),
+(3, 'aslam', 'dfdf', 'fgfg', '2015-09-09', '2020-11-29 20:39:20', '2020-11-29 20:39:20'),
+(4, 'aslam', 'dfdf', 'fgfg', '2015-09-09', '2020-11-29 20:40:27', '2020-11-29 20:40:27'),
+(5, 'aslam', 'dfdf', 'fgfg', '2015-09-09', '2020-11-29 20:40:53', '2020-11-29 20:40:53'),
+(6, 'Aslam', 'aa', 'aa', '2019-12-12', '2020-11-29 23:55:55', '2020-11-29 23:55:55'),
+(7, 'Aslam', 'aa', 'aa', '2019-12-12', '2020-11-30 00:07:19', '2020-11-30 00:07:19'),
+(8, 'aslam', 'father', 'mother', '1990-11-06', '2020-11-30 00:11:15', '2020-11-30 00:11:15'),
+(9, 'Aslam', 'siful', 'Mother name', '1990-12-15', '2020-11-30 23:24:23', '2020-11-30 23:24:23'),
+(10, 'Aslam', 'father', 'Mother name', '1990-12-08', '2020-11-30 23:32:04', '2020-11-30 23:32:04');
 
 -- --------------------------------------------------------
 
@@ -242,7 +301,7 @@ CREATE TABLE `doctors` (
 INSERT INTO `doctors` (`id`, `name`, `desc`, `image`, `degree`, `education`, `Experiences`, `address`, `phone`, `email`, `fb`, `twitter`, `instagram`, `speech`, `website`, `status`, `created_at`, `updated_at`) VALUES
 (3, 'Fakhrul Abedin', 'asst.Teacher', 'image_1605005443.jpg', 'B.S.S', 'CU', '5y', 'chattogram', 'n/a', 'nesc.bd@gmail.com', '#', '#', '#', NULL, NULL, 1, '2020-11-10 10:26:58', '2020-11-10 10:50:43'),
 (6, 'Md. Asad Ullah Adil', 'Principal, NESC', 'image_1605596259.jpg', 'B.A (Hon\'s), M.A (English), IIUC M.A (Al-Hadith- IU), L.L.B (NU)', 'B.A (Hon\'s), M.A (English), IIUC M.A (Al-Hadith- IU), L.L.B (NU)', '8', '130, Chatteswari Road, Chawkbazar, Chittagong (Medical College Hostel Gate in Ops)', '017006171', 'nesc.bd@gmail.com', 'https://www.facebook.com/asad.adil.58', NULL, NULL, 'I am delighted to welcome you to the National English School Chittagong. With the grace of almighty Allah, National English School Chittagong was founded in 2012 in the heart of the port city. Since it\'s inception our school has been successfully serving the community and continues to be a school of choice of our local area.\r\nWe offer a broad and varied curriculum and a warm, caring, encouraging and intimate environment which enables our students to reach their own personal level of excellence in the area of an academia, sport, culture and arts.\r\nWe have implemented our own educational method by focusing on the creating of next generation leaders with high ideal and humanity. This is why our motto is, \"Learners today, Leaders tomorrow.\'\r\nWe are fortunate to have a talented, highly committed teachers here to ensure the learning environment of our students is the best it can be. We are committed to work collaborate with parents to nurture an individual who possesses love for nation, society, community, moral and family values. \r\nWe also expect that we as a family will encourage students to persevere in face of challenges and adopt never give up spirit.\r\nThe achievements of our school in academics (100% A grade with GPA-5 in PECE and JSC exam) and extra curricular activities have been significant in the past several years. Here we collaborate , inspire and own to achieve our students dreams.\r\nOur commitment at National English School Chittagong is to provide a safe positive, rigorous learning environment that will empower students to become creative problem solvers, critical thinkers and inspired learners prepared for careers and life in the twenty first century .', NULL, 1, '2020-11-17 05:37:35', '2020-11-17 06:57:39'),
-(7, 'Dr. Mohammed Yusuf', 'Managing Director, NESC', 'image_1605592208.jpg', 'MBBS,MBA(Finance & Banking)', 'MBBS,MBA(Finance & Banking)', '10', '130, Chatteswari Road, Chawkbazar, Chittagong (Medical College Hostel Gate in Ops)', '017006171', 'nesc.bd@gmail.com', NULL, NULL, NULL, NULL, NULL, 1, '2020-11-17 05:50:08', '2020-11-17 05:50:08');
+(7, 'Dr. Mohammed Yusuf', 'Managing Director, NESC', 'image/img.jpg', 'MBBS,MBA(Finance & Banking)', 'MBBS,MBA(Finance & Banking)', '10', '130, Chatteswari Road, Chawkbazar, Chittagong (Medical College Hostel Gate in Ops)', '017006171', 'nesc.bd@gmail.com', NULL, NULL, NULL, NULL, NULL, 1, '2020-11-17 05:50:08', '2020-11-17 05:50:08');
 
 -- --------------------------------------------------------
 
@@ -305,26 +364,16 @@ CREATE TABLE `galleries` (
 --
 
 INSERT INTO `galleries` (`id`, `title`, `image`, `created_at`, `updated_at`) VALUES
-(6, 'Sundarban', 'image_1605511564.jpg', '2020-11-16 07:26:04', '2020-11-16 07:26:04'),
-(7, 'Science Fair', 'image_1605511696.jpg', '2020-11-16 07:28:16', '2020-11-16 07:28:16'),
-(8, 'Students', 'image_1605511718.jpg', '2020-11-16 07:28:38', '2020-11-16 07:28:38'),
-(9, 'Victory Day', 'image_1605511811.jpg', '2020-11-16 07:30:11', '2020-11-16 07:30:11'),
-(10, 'Online class', 'image_1605512310.jpeg', '2020-11-16 07:38:31', '2020-11-16 07:38:31'),
-(11, 'Online class', 'image_1605512332.jpeg', '2020-11-16 07:38:52', '2020-11-16 07:38:52'),
-(12, 'Online class', 'image_1605512359.jpeg', '2020-11-16 07:39:19', '2020-11-16 07:39:19'),
-(13, 'Parents meeting', 'image_1605512396.jpg', '2020-11-16 07:39:56', '2020-11-16 07:39:56'),
-(14, 'Class test', 'image_1605512548.jpg', '2020-11-16 07:42:28', '2020-11-16 07:42:28'),
-(15, 'Class party 2019', 'image_1605519134.jpg', '2020-11-16 09:32:15', '2020-11-16 09:32:15'),
-(16, 'Class party 2019', 'image_1605519365.jpg', '2020-11-16 09:36:06', '2020-11-16 09:36:06'),
-(17, 'Class party 2019', 'image_1605519459.jpg', '2020-11-16 09:37:39', '2020-11-16 09:37:39'),
-(18, 'Birthday Party', 'image_1605519566.jpg', '2020-11-16 09:39:26', '2020-11-16 09:39:26'),
-(19, 'Science Fair', 'image_1605519687.jpg', '2020-11-16 09:41:27', '2020-11-16 09:41:27'),
-(20, 'Science Fair', 'image_1605519783.jpg', '2020-11-16 09:43:03', '2020-11-16 09:43:03'),
-(21, 'PECE Dua ending program', 'image_1605519874.jpg', '2020-11-16 09:44:34', '2020-11-16 09:44:34'),
-(22, 'PECE Dua ending program', 'image_1605520022.jpg', '2020-11-16 09:47:02', '2020-11-16 09:47:02'),
-(23, 'Classroom', 'image_1605520095.jpg', '2020-11-16 09:48:15', '2020-11-16 09:48:15'),
-(24, 'Discussion on Ramadan and Iftar', 'image_1605520165.jpg', '2020-11-16 09:49:25', '2020-11-16 09:49:25'),
-(25, 'Assembly', 'image_1605520265.jpg', '2020-11-16 09:51:05', '2020-11-16 09:51:05');
+(8, 'Chess Competition 2019', 'Chess Competition 2019.jpg', '2020-11-16 07:28:38', '2020-11-16 07:28:38'),
+(9, 'Victory Day', '4.jpg', '2020-11-16 07:30:11', '2020-11-16 07:30:11'),
+(10, 'Online class', '5.jpeg', '2020-11-16 07:38:31', '2020-11-16 07:38:31'),
+(13, 'Parents meeting', '8.jpg', '2020-11-16 07:39:56', '2020-11-16 07:39:56'),
+(15, 'Class party 2019', '10.jpg', '2020-11-16 09:32:15', '2020-11-16 09:32:15'),
+(18, 'Birthday Party', '13.jpg', '2020-11-16 09:39:26', '2020-11-16 09:39:26'),
+(21, 'PECE Dua ending program', '16.jpg', '2020-11-16 09:44:34', '2020-11-16 09:44:34'),
+(23, 'Classroom', '18.jpg', '2020-11-16 09:48:15', '2020-11-16 09:48:15'),
+(25, 'Assembly', '20.jpg', '2020-11-16 09:51:05', '2020-11-16 09:51:05'),
+(26, 'Chess Competition 2019', 'Chess Competition 2019.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -360,7 +409,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2020_10_24_045118_create_admissions_table', 1),
 (16, '2020_10_25_060334_create_notices_table', 1),
 (17, '2020_10_28_154546_create_galleries_table', 1),
-(20, '2020_11_26_194449_create_news_table', 2);
+(20, '2020_11_26_194449_create_news_table', 2),
+(22, '2020_11_28_181420_create_payment_rules_table', 4),
+(25, '2020_11_29_044056_create_payment_numbers_table', 5),
+(27, '2020_11_29_100455_create_blank_forms_table', 6),
+(30, '2020_11_30_101642_create_birthdays_table', 8),
+(35, '2020_11_30_064118_create_principal_s_m_s_table', 9);
 
 -- --------------------------------------------------------
 
@@ -396,7 +450,10 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `message`, `created_at`, `updated_at`) VALUES
-(1, 'qwwqwNews2', '123654789qwqwq', NULL, '2020-11-26 11:14:30');
+(1, 'qwwqwNews2', '123654789qwqwq', NULL, '2020-11-26 11:14:30'),
+(2, 'qwwqwNews2g', '123654789qwqwq', NULL, '2020-11-26 11:14:30'),
+(3, 'qwwqwNews2', '123654789qwqwq', NULL, '2020-11-26 11:14:30'),
+(4, 'qwwqwNews2g', '123654789qwqwq', NULL, '2020-11-26 11:14:30');
 
 -- --------------------------------------------------------
 
@@ -442,6 +499,90 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `payment_numbers`
+--
+
+CREATE TABLE `payment_numbers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `paymentNumber` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `transaction_ID` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `payment_numbers`
+--
+
+INSERT INTO `payment_numbers` (`id`, `paymentNumber`, `transaction_ID`, `status`, `created_at`, `updated_at`) VALUES
+(2, '016', '016', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(3, '016806072934', 'ghghg', 0, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(4, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(5, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(6, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(7, '016806072934', 'ghghggh', 0, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(8, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(9, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(10, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(11, '016806072934', 'ghghg', 0, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(12, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(13, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(14, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(15, '016806072934', 'ghghg', 0, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(16, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
+(17, '12', '21', 1, '2020-11-29 04:46:56', '2020-11-29 04:46:56'),
+(18, '111', '222', 1, '2020-11-29 04:47:50', '2020-11-29 04:47:50');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment_rules`
+--
+
+CREATE TABLE `payment_rules` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `information` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `payment_rules`
+--
+
+INSERT INTO `payment_rules` (`id`, `information`, `created_at`, `updated_at`) VALUES
+(2, '01. Go to your bKash Mobile Menu by dialing *247# <br></br>\r\n\r\n02. Choose “Payment”<br>\r\n\r\n03. Enter the Merchant bKash Account Number you want to pay to<br>\r\n\r\n04. Enter the amount you want to pay<br>\r\n\r\n05. Enter a reference* against your payment (you can mention the purpose of the transaction in one word. e.g. Bill)<br>\r\n\r\n06. Enter the Counter Number* (the salesperson at the counter will tell you the number)<br>\r\n\r\n07. Now enter your bKash Mobile Menu PIN to confirm<br>\r\n', NULL, '2020-11-29 04:46:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `principal_s_m_s`
+--
+
+CREATE TABLE `principal_s_m_s` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `leftSide` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rightSide` longtext COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `principal_s_m_s`
+--
+
+INSERT INTO `principal_s_m_s` (`id`, `title`, `leftSide`, `rightSide`, `name`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Chairmain\'s Message', 'I am delighted to welcome you to the National English School Chittagong. With the grace of Almighty Allah, National English School Chittagong was founded in 2012 in the heart of this port city. Since its inception our school has been successfully serving the community and continues to be a school of choice for our local area.\r\nWe offer a broad and varied curriculum and a warm, caring, encouraging and intimate environment which enables our students to reach their own personal levels of excellence in the area of an academia, sport, culture and arts.\r\nWe have implemented our own educational method by focusing on the creation of next generation leaders with high ideals and humanity. That’s why our motto is “Learners today, Ieaders tomorow”.\r\nWe are fortunate to have talented, highly committed teachers here to ensure the learning environment of our students is the best it can be. We are committed to collaborate with parents to nurture an individual who possesses love for nation, society, community and moral and family values.\r\nWe also expect that we as a family will encourage students to persevere in face of challenges and adopt never give up spirit.\r\nThe achievements of our school in academic (100% A grade with GPA-5 in PECE and JSC exam) and extra curricular activities have been significant in the past several years. Here we collaborate, inspire and own to achieve our students dreams.\r\nOur commitment at National English School Chittagong is to provide a safe, positive, rigorous learning environment that will empower students to become creative problem solvers, critical thinkers and inspired learners prepared for careers and life in the twenty-first century.\r\nSeeking your cooperation in anticipation.', NULL, 'Md. Asad Ullah Adil', 'image/person_1.jpg', NULL, '2020-12-03 04:51:25'),
+(2, 'Director\'s Message', 'I am delighted to welcome you to the National English School Chittagong. With the grace of Almighty Allah, National English School Chittagong was founded in 2012 in the heart of this port city. Since its inception our school has been successfully serving the community and continues to be a school of choice for our local area.\r\nWe offer a broad and varied curriculum and a warm, caring, encouraging and intimate environment which enables our students to reach their own personal levels of excellence in the area of an academia, sport, culture and arts.\r\nWe have implemented our own educational method by focusing on the creation of next generation leaders with high ideals and humanity. That’s why our motto is “Learners today, Ieaders tomorow”.\r\nWe are fortunate to have talented, highly committed teachers here to ensure the learning environment of our students is the best it can be. We are committed to collaborate with parents to nurture an individual who possesses love for nation, society, community and moral and family values.\r\nWe also expect that we as a family will encourage students to persevere in face of challenges and adopt never give up spirit.\r\nThe achievements of our school in academic (100% A grade with GPA-5 in PECE and JSC exam) and extra curricular activities have been significant in the past several years. Here we collaborate, inspire and own to achieve our students dreams.\r\nOur commitment at National English School Chittagong is to provide a safe, positive, rigorous learning environment that will empower students to become creative problem solvers, critical thinkers and inspired learners prepared for careers and life in the twenty-first century.\r\nSeeking your cooperation in anticipation.\r\n', '', 'Md. Asad Ullah Adil', 'image/person_2.jpg', NULL, NULL),
+(3, 'Principal\'s Message', 'I am delighted to welcome you to the National English School Chittagong. With the grace of Almighty Allah, National English School Chittagong was founded in 2012 in the heart of this port city. Since its inception our school has been successfully serving the community and continues to be a school of choice for our local area.\r\nWe offer a broad and varied curriculum and a warm, caring, encouraging and intimate environment which enables our students to reach their own personal levels of excellence in the area of an academia, sport, culture and arts.\r\nWe have implemented our own educational method by focusing on the creation of next generation leaders with high ideals and humanity. That’s why our motto is “Learners today, Ieaders tomorow”.\r\nWe are fortunate to have talented, highly committed teachers here to ensure the learning environment of our students is the best it can be. We are committed to collaborate with parents to nurture an individual who possesses love for nation, society, community and moral and family values.\r\nWe also expect that we as a family will encourage students to persevere in face of challenges and adopt never give up spirit.\r\nThe achievements of our school in academic (100% A grade with GPA-5 in PECE and JSC exam) and extra curricular activities have been significant in the past several years. Here we collaborate, inspire and own to achieve our students dreams.\r\nOur commitment at National English School Chittagong is to provide a safe, positive, rigorous learning environment that will empower students to become creative problem solvers, critical thinkers and inspired learners prepared for careers and life in the twenty-first century.\r\nSeeking your cooperation in anticipation.\r\n', 'We have implemented our own educational method by focusing on the creation of next generation leaders with high ideals and humanity. That’s why our motto is “Learners today leaders tomorrow”.', 'Md. Asad Ullah Adil', 'image/photo.jpg', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `shedules`
 --
 
@@ -475,7 +616,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@a.com', NULL, '$2y$10$ace1.l3DwLgjeRgm9ZGQ4O7b..Kg1C7f3pJQaInoKv7Ob8O3EF2/u', 'O8i3ICnNODAU8XIBfu2vy7yzPBHjV7Siu1ZWWtMGEPRo28CxhUY3QRqd4ztp', '2020-11-04 04:08:45', '2020-11-04 04:08:45');
+(1, 'Admin', 'admin@a.com', NULL, '$2y$10$ace1.l3DwLgjeRgm9ZGQ4O7b..Kg1C7f3pJQaInoKv7Ob8O3EF2/u', 'MFLEw8HoQ70mMZZBxUCWauKMTNgPBHlPqXW7hf0GBdCszBbzwTN8gJ1NLpaV', '2020-11-04 04:08:45', '2020-11-04 04:08:45');
 
 --
 -- Indexes for dumped tables
@@ -497,6 +638,18 @@ ALTER TABLE `administrations`
 -- Indexes for table `admissions`
 --
 ALTER TABLE `admissions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `birthdays`
+--
+ALTER TABLE `birthdays`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blank_forms`
+--
+ALTER TABLE `blank_forms`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -587,6 +740,24 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `payment_numbers`
+--
+ALTER TABLE `payment_numbers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `payment_rules`
+--
+ALTER TABLE `payment_rules`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `principal_s_m_s`
+--
+ALTER TABLE `principal_s_m_s`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `shedules`
 --
 ALTER TABLE `shedules`
@@ -619,7 +790,19 @@ ALTER TABLE `administrations`
 -- AUTO_INCREMENT for table `admissions`
 --
 ALTER TABLE `admissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `birthdays`
+--
+ALTER TABLE `birthdays`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `blank_forms`
+--
+ALTER TABLE `blank_forms`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -673,13 +856,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `missions`
@@ -691,13 +874,31 @@ ALTER TABLE `missions`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `notices`
 --
 ALTER TABLE `notices`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `payment_numbers`
+--
+ALTER TABLE `payment_numbers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `payment_rules`
+--
+ALTER TABLE `payment_rules`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `principal_s_m_s`
+--
+ALTER TABLE `principal_s_m_s`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `shedules`

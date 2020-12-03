@@ -29,7 +29,6 @@
 .acme-news-ticker { height: 30px; }
 .acme-news-ticker-label { padding: 5px; }
 .acme-news-ticker-box { padding-top: 0px; }
-.acme-news-ticker { margin-top: 5px; }
 
 /*About Us*/
-#about .ftco-animate{ text-align: justify; }
+.ftco-animate{ text-align: justify; }

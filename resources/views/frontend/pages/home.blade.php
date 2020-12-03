@@ -142,7 +142,7 @@
       </div>
 
        @php
-         $PrincipalSMSs = App\PrincipalSMS::all();
+         $PrincipalSMSs = App\PrincipalSMS::where('id', 1)->get();
        @endphp
 
        @foreach($PrincipalSMSs as $PrincipalSMS)
@@ -161,20 +161,21 @@
        </style>
       <div class="row justify-content-center sms p-2" style="background-color: #ecf0f1;">
          <div class="col-8 ftco-animate m-1">
-              <p lass="float-left">Chairmain's Message...</p>
             <div class="text ftco-animate">
               <p><i>
                   {{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 800, $end = '...') }}
               </i></p>
             </div>
             <div class="row">
+
               <div class="col-3 ftco-animate mt-2">    
-                <h1 class="mb-1"><span>{{$PrincipalSMS->teacherName}}</h1>
+                <h2 class="mb-1"><span>{{$PrincipalSMS->name}}</h2>
               </div>
+
             </div>
          </div>
          <div class="col ftco-animate">
-            <img src="{{ asset('image/person_1.jpg') }}" alt="" class="responsive float-right" width="80%" eight="10%"> 
+            <img src="{{ asset($PrincipalSMS->image) }}" alt="" class="responsive float-right" width="80%" eight="10%"> 
          </div>
       </div>
 
@@ -192,7 +193,7 @@
       </div>
 
        @php
-         $PrincipalSMSs = App\PrincipalSMS::all();
+         $PrincipalSMSs = App\PrincipalSMS::where('id', 2)->get();
        @endphp
 
        @foreach($PrincipalSMSs as $PrincipalSMS)
@@ -211,7 +212,7 @@
        </style>
       <div class="row justify-content-center sms p-2" style="background-color: #ecf0f1;">
          <div class="col ftco-animate">
-            <img src="{{ asset('image/person_3.jpg') }}" alt="" class="responsive float-left" width="80%" eight="10%"> 
+            <img src="{{ asset($PrincipalSMS->image) }}" alt="" class="responsive float-left" width="80%" eight="10%"> 
          </div>
 
          <div class="col-8 ftco-animate m-1">
@@ -223,7 +224,7 @@
             </div>
             <div class="row">
               <div class="col-3 ftco-animate mt-2">    
-                <h2 class="mb-1"><span>{{$PrincipalSMS->teacherName}}</h2>
+                <h2 class="mb-1"><span>{{$PrincipalSMS->name}}</h2>
               </div>
             </div>
          </div>
@@ -243,7 +244,7 @@
       </div>
 
        @php
-         $PrincipalSMSs = App\PrincipalSMS::all();
+         $PrincipalSMSs = App\PrincipalSMS::where('id', 3)->get();
        @endphp
 
        @foreach($PrincipalSMSs as $PrincipalSMS)
@@ -277,7 +278,7 @@
             <div class="row">
               <div class="col-3 ftco-animate m-1 bg-light">
                 {{-- <img src="{{ asset('image/signature.png') }}" alt="" class="img-fluid">                  --}}
-                <h2 class="mb-1"><span>{{$PrincipalSMS->teacherName}}</h2>
+                <h2 class="mb-1"><span>{{$PrincipalSMS->name}}</h2>
               </div>
             </div>
          </div>

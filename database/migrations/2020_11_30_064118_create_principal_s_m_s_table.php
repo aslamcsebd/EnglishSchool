@@ -17,10 +17,9 @@ class CreatePrincipalSMSTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('leftSide');
-            $table->longText('rightSide');
-            $table->string('teacherName');
-            $table->string('signature');
-            $table->string('image');
+            $table->longText('rightSide')->nullable();
+            $table->string('name');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

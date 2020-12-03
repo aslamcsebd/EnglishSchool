@@ -1,38 +1,41 @@
 @extends('frontend.master')
 @section('content')
+
 <section id="about" class="my-5">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
+      <div class="container">
+         <div class="row justify-content-center mb-5">
             <div class="col-md-8 text-center heading-section ftco-animate ">
-                <h2 class="mb-1"><span>About</span> Us</h2>
-                <p>{{ $about->title }}</p>
+               <h2 class="mb-1"><span>About</span> Us</h2>
+               <p>{{ $about->title }}</p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 wrap-about py-5 wrap-about bg-light">
-                <div class="text px-4 ftco-animate">
-                    <p>
-                        {{ $about->description }}
-                    </p>
-                </div>
+         </div>
+         <div class="row ustify-content-center">
+            <div class="col ftco-animate m-1 bg-light">
+               <div class="text p-4 ftco-animate">
+                  <p>
+                     {{ \Illuminate\Support\Str::limit($about->description, $limit = 1600, $end = '...') }}
+                  </p>
+               </div>
             </div>
-            <div class="col-md-6">
-            <img src="{{ url('storage/about/'.$about->image) }}" alt="" class="img-fluid">
+             <div class="col ftco-animate m-1 bg-light">
+               <div class="text p-4 ftco-animate">
+                 <img src="{{ asset('image/school_building.jpg') }}" alt="" class="img-fluid" width="100%" height="100%">
+               </div>
             </div>
-        </div>
-    </div>
-</section>
+            </div>
+         </div>
+      </div>
+   </section> 
 
 <section id="about" class="my-5">
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-md-8 text-center heading-section ftco-animate ">
-                <h2 class="mb-1"><span>Our</span> Mission</h2>
-                
+                <h2 class="mb-1"><span>Our</span> Mission</h2>                
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 rap-about py-5 wrap-about bg-light">
+            <div class="col-8 rap-about py-5 wrap-about bg-light">
                 <div class="text px-4 ftco-animate">
                     <p class="text-center">
                         Encourage the students to achieve academic excellence by utilizing their talents and capabilities to the fullest extent. 
@@ -41,7 +44,11 @@
                    
                 </div>
             </div>
-            
+            <div class="col ftco-animate bg-light">
+               <div class="text ftco-animate">
+                 <img src="{{ asset('frontend/images/bg_5.jpg') }}" alt="" class="img-fluid" width="100%" height="100%">
+               </div>
+            </div>            
         </div>
     </div>
 </section>
@@ -50,12 +57,18 @@
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-md-8 text-center heading-section ftco-animate ">
-                <h2 class="mb-1"><span>Our</span> Vision</h2>
-                
+                <h2 class="mb-1"><span>Our</span> Vision</h2>                
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 rap-about py-5 wrap-about bg-light">
+
+            <div class="col ftco-animate bg-light">
+               <div class="text ftco-animate">
+                 <img src="{{ asset('frontend/images/course-5.jpg') }}" alt="" class="img-fluid" width="100%" height="100%">
+               </div>
+            </div>    
+
+            <div class="col-8 rap-about py-5 wrap-about bg-light">
                 <div class="text px-4 ftco-animate">
                     <p class="text-center">
                         Encourage the students to achieve academic excellence by utilizing their talents and capabilities to the fullest extent. 
@@ -77,7 +90,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 rap-about py-5 wrap-about bg-light">
+            <div class="col-8 rap-about p-5 wrap-about bg-light">
                 <div class="text px-4 ftco-animate">
                     <p class="text-center">
                         To provide it's students with the best educational system and lay a solid foundation for the students to pave the way for continuing higher education and building suitable career in their lives.
@@ -90,7 +103,12 @@
                     </p>    
                 </div>
             </div>
-            
+
+            <div class="col ftco-animate bg-light">
+               <div class="text ftco-animate">
+                 <img src="{{ asset('frontend/images/course-6.jpg') }}" alt="" class="img-fluid" width="100%" height="100%">
+               </div>
+            </div> 
         </div>
     </div>
 </section>
@@ -102,7 +120,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 rap-about py-5 wrap-about bg-light">
+
+            <div class="col ftco-animate bg-light">
+               <div class="text ftco-animate">
+                 <img src="{{ asset('frontend/images/image_3.jpg') }}" alt="" class="img-fluid" width="100%" height="100%">
+               </div>
+            </div>    
+            <div class="col-8 rap-about py-5 wrap-about bg-light">
                 <div class="text px-4 ftco-animate">
                     <p class="text-center">
                         Our philosophy of teaching is "learning by doing". W have appointed a team of dedicated and experienced teachers who will form the core of our teaching staff.
@@ -123,7 +147,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 rap-about py-5 wrap-about bg-light">
+            <div class="col-8 rap-about py-5 wrap-about bg-light">
                 <div class="text px-4 ftco-animate">
                     <p class="text-center">
                         Initially the school has started in a hired accommodation which will be shifted to its permanent location in due course of time. Though, we have started in a humble way, 
@@ -133,7 +157,11 @@
                     </p>    
                 </div>
             </div>
-            
+            <div class="col ftco-animate bg-light">
+               <div class="text ftco-animate">
+                 <img src="{{ asset('frontend/images/image_6.jpg') }}" alt="" class="img-fluid" width="100%" height="100%">
+               </div>
+            </div>                
         </div>
     </div>
 </section>
@@ -160,8 +188,7 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
-                    
+                    @endforeach                    
                 </div>
             </div>
         </div>
