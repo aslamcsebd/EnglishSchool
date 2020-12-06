@@ -15,7 +15,7 @@ class CreatePaymentRulesTable extends Migration
     {
         Schema::create('payment_rules', function (Blueprint $table) {
             $table->id();
-            $table->text('information');            
+            $table->text('payment_rules');            
             $table->timestamps();
         });
     }

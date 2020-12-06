@@ -39,6 +39,18 @@ class PaymentController extends Controller{
       return back()->with('success','Payment add successfully');
    }
 
+   public function add_payment_rules(Request $request) {
+
+      if (is_array($request->payment_rules)) {
+         for($i = 0; $i <= count($request->payment_rules) - 1; $i++){
+            // payment_rules::create([ 'payment_rules' => $request->payment_rules[$i] ]);
+            payment_rules::create([ 'payment_rules' => $request->payment_rules[$i] ]);
+         }
+       }
+
+      return back()->with('payment_rules','Payment Rules add successfully');
+   }
+
 
    public function downloadForm(){
       return view('frontend.pages.downloadManagement');      

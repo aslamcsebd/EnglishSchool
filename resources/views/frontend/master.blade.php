@@ -23,21 +23,18 @@
         <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{ asset('frontend/css/newsHeading.css') }}">
 
+        <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
         <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/css/style2.css') }}">
-        <link rel="stylesheet" href="{{asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
         @stack('css')
 
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     </head>
 
     <body>
-        @include('frontend.inc.topbar')
-        <!-- END nav -->
-        
-          @yield('content')
-
-        @include('frontend.inc.footer')
+         @include('frontend.inc.topbar')
+            @yield('content')
+         @include('frontend.inc.footer')
 
 
 

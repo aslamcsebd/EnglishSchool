@@ -25,7 +25,7 @@
             </div>
          </div>
       </div>
-   </section> 
+</section> 
 
 <section id="about" class="my-5">
     <div class="container">
@@ -112,6 +112,7 @@
         </div>
     </div>
 </section>
+
 <section id="about" class="my-5">
     <div class="container">
         <div class="row justify-content-center mb-5">
@@ -139,6 +140,7 @@
         </div>
     </div>
 </section>
+
 <section id="about" class="my-5">
     <div class="container">
         <div class="row justify-content-center mb-5">
@@ -195,33 +197,33 @@
     </div>
 </section>
 
-@foreach ($directors as $director)
-@if ($director->speech)
-<section class="mb-3">
-    @foreach ($director->categories as $key => $value) 
-        @if ($value->name == 'Principle')
-    <div class="container">
-        <div class="text-center heading-section ftco-animate">
-            <h2 class="mb-4"> 
-                <span>Message From</span>
-                    
-                    {{ $value->name }}
-                    
-                </h2>
-            </div>
-            <div class="row">
-                <div class="offset-md-2 col-md-4">
-                    <img class="img-fluid" src="{{ url('storage/doctorimage/'.$director->image) }}" alt="">
-                </div>
-                <div class="col-md-6 mt-3">
-                    <p>{{ $director->speech }}</p>
-                </div>
-            </div>
-            
-        </div>
-        @endif
-    @endForeach
-</section>
-@endif
-@endforeach
+   @foreach ($directors as $director)
+      @if ($director->speech)
+         <section class="mb-3">
+             @foreach ($director->categories as $key => $value) 
+                 @if ($value->name == 'Principle')
+             <div class="container">
+                 <div class="text-center heading-section ftco-animate">
+                     <h2 class="mb-4"> 
+                         <span>Message From</span>
+                             
+                             {{ $value->name }}
+                             
+                         </h2>
+                     </div>
+                     <div class="row">
+                         <div class="offset-md-2 col-md-4">
+                             <img class="img-fluid" src="{{ url('storage/doctorimage/'.$director->image) }}" alt="">
+                         </div>
+                         <div class="col-md-6 mt-3">
+                             <p>{{ $director->speech }}</p>
+                         </div>
+                     </div>
+                     
+                 </div>
+                 @endif
+             @endForeach
+         </section>
+      @endif
+   @endforeach
 @endsection

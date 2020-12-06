@@ -130,9 +130,9 @@
 	</div>
 </section>
 
-{{-- Message --}}
 
-<section id="about" class="my-5">
+{{--Principal Message Start --}}
+<section id="about" class="my-5 message">
    <div class="container">
 
      <div class="row justify-content-center mb-5">
@@ -142,48 +142,27 @@
       </div>
 
        @php
-         $PrincipalSMSs = App\PrincipalSMS::where('id', 1)->get();
+         $PrincipalSMS = App\PrincipalSMS::all()->get(0);
        @endphp
 
-       @foreach($PrincipalSMSs as $PrincipalSMS)
-
-       <style type="text/css">
-         .sms .float-left {
-            font-size: 25px;
-            font-weight: 600;
-            color: #fda638;
-         }
-         .left {
-            font-size: 22px;
-            font-weight: 300;
-            text-align: right;
-         }         
-       </style>
-      <div class="row justify-content-center sms p-2" style="background-color: #ecf0f1;">
+      <div class="row justify-content-center sms p-2">
          <div class="col-8 ftco-animate m-1">
             <div class="text ftco-animate">
-              <p><i>
-                  {{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 800, $end = '...') }}
-              </i></p>
+               <p>
+                  <i>{{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 800, $end = '...') }}
+                  </i>
+               </p>               
             </div>
-            <div class="row">
-
-              <div class="col-3 ftco-animate mt-2">    
-                <h2 class="mb-1"><span>{{$PrincipalSMS->name}}</h2>
-              </div>
-
-            </div>
+            <p class="pt-4 float-left"><span>{{$PrincipalSMS->name}}</p>
          </div>
          <div class="col ftco-animate">
             <img src="{{ asset($PrincipalSMS->image) }}" alt="" class="responsive float-right" width="80%" eight="10%"> 
          </div>
       </div>
-
-     @endforeach
    </div>
 </section>
 
-<section id="about" class="my-5">
+<section id="about" class="my-5 message">
    <div class="container">
 
      <div class="row justify-content-center mb-5">
@@ -193,48 +172,28 @@
       </div>
 
        @php
-         $PrincipalSMSs = App\PrincipalSMS::where('id', 2)->get();
+         $PrincipalSMS = App\PrincipalSMS::all()->get(1);
        @endphp
 
-       @foreach($PrincipalSMSs as $PrincipalSMS)
-
-       <style type="text/css">
-         .sms .float-left {
-            font-size: 25px;
-            font-weight: 600;
-            color: #fda638;
-         }
-         .left {
-            font-size: 22px;
-            font-weight: 300;
-            text-align: right;
-         }         
        </style>
-      <div class="row justify-content-center sms p-2" style="background-color: #ecf0f1;">
+      <div class="row justify-content-center sms p-2">
          <div class="col ftco-animate">
             <img src="{{ asset($PrincipalSMS->image) }}" alt="" class="responsive float-left" width="80%" eight="10%"> 
          </div>
 
          <div class="col-8 ftco-animate m-1">
-              <p lass="float-left">Director's Message...</p>
             <div class="text ftco-animate">
               <i>
                   {{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 800, $end = '...') }}
               </i>
             </div>
-            <div class="row">
-              <div class="col-3 ftco-animate mt-2">    
-                <h2 class="mb-1"><span>{{$PrincipalSMS->name}}</h2>
-              </div>
-            </div>
+            <p class="pt-4 float-right"><span>{{$PrincipalSMS->name}}</p>
          </div>
       </div>
-
-     @endforeach
    </div>
 </section>
 
-<section id="about" class="my-5">
+<section id="about" class="my-5 message">
    <div class="container">
 
      <div class="row justify-content-center mb-5">
@@ -244,56 +203,29 @@
       </div>
 
        @php
-         $PrincipalSMSs = App\PrincipalSMS::where('id', 3)->get();
+         $PrincipalSMS = App\PrincipalSMS::all()->get(2);
        @endphp
 
-       @foreach($PrincipalSMSs as $PrincipalSMS)
-
-       <style type="text/css">
-         .sms .float-left {
-            font-size: 25px;
-            font-weight: 600;
-            color: #fda638;
-         }
-         .left {
-            font-size: 22px;
-            font-weight: 300;
-            text-align: right;
-         }
-
-         .a img{ height: 300px; width: 100%; }
-       </style>
-
-      <div class="row justify-content-center mb-5 a">
+      <div class="row justify-content-center mb-5 principal">
          <img src="{{ asset('image/photo.jpg') }}" alt="" class="responsive" idth="100%" eight="10%">         
       </div>
       <div class="row ustify-content-center sms">
-         <div class="col-9 ftco-animate m-1" style="background-color: #ffffe0;">
-              <p lass="float-left">Principal's Message...</p> <br> 
+         <div class="col-9 ftco-animate m-1">
             <div class="text ftco-animate">
               <p>
-                  {{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 1600, $end = '...') }}
+                  {{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 1800, $end = '...') }}
               </p>
             </div>
-            <div class="row">
-              <div class="col-3 ftco-animate m-1 bg-light">
-                {{-- <img src="{{ asset('image/signature.png') }}" alt="" class="img-fluid">                  --}}
-                <h2 class="mb-1"><span>{{$PrincipalSMS->name}}</h2>
-              </div>
-            </div>
+            <p class="pt-4 float-left"><span>{{$PrincipalSMS->name}}</p>
          </div>
          <div class="col ftco-animate m-1" style="background-color: #a32cc4">
             <div class=" p-4 ftco-animate">
                <p class="text-white left">{{ \Illuminate\Support\Str::limit($PrincipalSMS->rightSide, $limit = 600, $end = '...') }}</p>
-                             
             </div>
          </div>
       </div>
-
-     @endforeach
    </div>
-</section> 
-
+</section>
 
 <section class="ftco-section ftco-no-pb">
 	<div class="container">

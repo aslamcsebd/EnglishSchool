@@ -206,12 +206,17 @@
             @php
                $payment_rules = App\payment_rules::all();
             @endphp
+            
+            @php $i=1; @endphp
+
+            <div class="border p-4">
 
             @foreach($payment_rules as $payment_rule)
-            <div class="border p-4">
-               <p>{{ $payment_rule->information }}</p>
-            </div>
+               <p> -> {{$i}}) {{ $payment_rule->payment_rules }}</p>
+               <hr>
+                @php $i = $i+1; @endphp   
             @endforeach
+            </div>
          </div>
 
       </div>

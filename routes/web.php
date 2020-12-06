@@ -63,6 +63,7 @@ Route::post('update_payment_rule', 'PaymentController@update_payment_rule')->nam
 
 // Add_Payment_Number
 Route::post('Add_Payment_Number', 'PaymentController@Add_Payment_Number')->name('Add_Payment_Number');
+Route::post('add_payment_rules', 'PaymentController@add_payment_rules')->name('add_payment_rules');
 
 // Form
 Route::get('downloadForm','PaymentController@downloadForm')->name('downloadForm');
