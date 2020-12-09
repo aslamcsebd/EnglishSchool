@@ -43,7 +43,6 @@ class PaymentController extends Controller{
 
       if (is_array($request->payment_rules)) {
          for($i = 0; $i <= count($request->payment_rules) - 1; $i++){
-            // payment_rules::create([ 'payment_rules' => $request->payment_rules[$i] ]);
             payment_rules::create([ 'payment_rules' => $request->payment_rules[$i] ]);
          }
        }

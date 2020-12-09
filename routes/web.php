@@ -78,3 +78,7 @@ Route::post('UpdatePrincipalSMS','PrincipalSMSController@UpdatePrincipalSMS')->n
 // birthday
 
 Route::get('birthday','PrincipalSMSController@birthday')->name('birthday');
+
+// facilities
+Route::post('add_facilities_description', 'Admin\facilityController@add_facilities_description')->name('add_facilities_description');
+

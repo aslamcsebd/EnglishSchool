@@ -97,15 +97,24 @@
 			<div class="col-md-12 wrap-about py-5 pr-md-4 ftco-animate">
 				<div class="row mt-5">
 					@foreach ($facilities as $facility)
-					<div class="col-lg-4">
-						<div class="services-2 d-flex">
-							<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center"><span class="{{ $facility->icon }}"></span></div>
-							<div class="text">
-								<h3>{{ $facility->title }}</h3>
-								<p>{{ $facility->description }}</p>
+						<div class="col-lg-4">
+							<div class="services-2 d-flex">
+								<div class="icon mt-2 mr-3 d-flex justify-content-center align-items-center">
+									<span class="{{ $facility->icon }}"></span>
+								</div>
+								<div class="text">
+									<h3>{{ $facility->title }}</h3>
+
+									@php 
+                              $all = App\facilities_description::where('facilities_ID', $facility->id)->get();
+                           @endphp        
+                              @foreach($all as $seen)
+										<p>-> {{$seen->descriptions }}</p>
+										@endforeach
+
+								</div>
 							</div>
 						</div>
-					</div>
 					@endforeach
 					
 				</div>
@@ -132,12 +141,13 @@
 
 
 {{--Principal Message Start --}}
+{{--Principal Message Start --}}
 <section id="about" class="my-5 message">
    <div class="container">
 
      <div class="row justify-content-center mb-5">
          <div class="col-md-8 text-center heading-section ftco-animate ">
-            <h2 class="mb-1"><span>Chairmain's </span>Message</h2>
+            <h2 class="mb-1"><span>Chairman's </span>Message</h2>
          </div>
       </div>
 
@@ -146,17 +156,17 @@
        @endphp
 
       <div class="row justify-content-center sms p-2">
-         <div class="col-8 ftco-animate m-1">
+         <div class="col-10 ftco-animate m-1">
             <div class="text ftco-animate">
                <p>
-                  <i>{{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 800, $end = '...') }}
-                  </i>
+                  <b>{{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit =4800, $end = '...') }}
+                  </b>
                </p>               
             </div>
             <p class="pt-4 float-left"><span>{{$PrincipalSMS->name}}</p>
          </div>
          <div class="col ftco-animate">
-            <img src="{{ asset($PrincipalSMS->image) }}" alt="" class="responsive float-right" width="80%" eight="10%"> 
+            <img src="{{ asset($PrincipalSMS->image) }}" alt="" class="responsive float-right" width="100%" eight="100%"> 
          </div>
       </div>
    </div>
@@ -167,7 +177,7 @@
 
      <div class="row justify-content-center mb-5">
          <div class="col-md-8 text-center heading-section ftco-animate ">
-            <h2 class="mb-1"><span>Director's </span>Message</h2>
+            <h2 class="mb-1"><span>Managing Director’s </span>Message</h2>
          </div>
       </div>
 
@@ -178,14 +188,14 @@
        </style>
       <div class="row justify-content-center sms p-2">
          <div class="col ftco-animate">
-            <img src="{{ asset($PrincipalSMS->image) }}" alt="" class="responsive float-left" width="80%" eight="10%"> 
+            <img src="{{ asset($PrincipalSMS->image) }}" alt="" class="responsive float-left" width="100%" height="100%"> 
          </div>
 
-         <div class="col-8 ftco-animate m-1">
+         <div class="col-10 ftco-animate m-1">
             <div class="text ftco-animate">
-              <i>
-                  {{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 800, $end = '...') }}
-              </i>
+              <b>
+                  {{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 4800, $end = '...') }}
+              </b>
             </div>
             <p class="pt-4 float-right"><span>{{$PrincipalSMS->name}}</p>
          </div>
@@ -207,20 +217,20 @@
        @endphp
 
       <div class="row justify-content-center mb-5 principal">
-         <img src="{{ asset('image/photo.jpg') }}" alt="" class="responsive" idth="100%" eight="10%">         
+         <img src="{{ asset('image/photo.jpg') }}" alt="" class="img-fluid" idth="100%" eight="100%">         
       </div>
       <div class="row ustify-content-center sms">
          <div class="col-9 ftco-animate m-1">
             <div class="text ftco-animate">
               <p>
-                  {{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 1800, $end = '...') }}
+                 <b> {{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 3400, $end = '...') }}</b>
               </p>
             </div>
             <p class="pt-4 float-left"><span>{{$PrincipalSMS->name}}</p>
          </div>
          <div class="col ftco-animate m-1" style="background-color: #a32cc4">
             <div class=" p-4 ftco-animate">
-               <p class="text-white left">{{ \Illuminate\Support\Str::limit($PrincipalSMS->rightSide, $limit = 600, $end = '...') }}</p>
+               <p class="text-white left"><b>{{ \Illuminate\Support\Str::limit($PrincipalSMS->rightSide, $limit = 4600, $end = '...') }}</b></p>
             </div>
          </div>
       </div>
@@ -275,7 +285,7 @@
 	</div>
 </section>
 
-<section class="ftco-section">
+<section class="ftco-section" style="display: none;">
 	<div class="container">
 		<div class="row justify-content-center mb-5 pb-2">
 			<div class="col-md-8 text-center heading-section ftco-animate">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 03, 2020 at 11:27 AM
+-- Generation Time: Dec 09, 2020 at 03:10 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -212,15 +212,6 @@ CREATE TABLE `category_doctor` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `category_doctor`
---
-
-INSERT INTO `category_doctor` (`id`, `doctor_id`, `category_id`, `created_at`, `updated_at`) VALUES
-(9, 3, 3, '2020-11-17 05:08:58', '2020-11-17 05:08:58'),
-(11, 6, 1, '2020-11-17 05:37:35', '2020-11-17 05:37:35'),
-(12, 7, 6, '2020-11-17 05:50:08', '2020-11-17 05:50:08');
-
 -- --------------------------------------------------------
 
 --
@@ -333,6 +324,20 @@ INSERT INTO `facilities` (`id`, `title`, `description`, `icon`, `created_at`, `u
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `facilities_descriptions`
+--
+
+CREATE TABLE `facilities_descriptions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `facilities_ID` int(11) NOT NULL,
+  `descriptions` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -414,7 +419,31 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (25, '2020_11_29_044056_create_payment_numbers_table', 5),
 (27, '2020_11_29_100455_create_blank_forms_table', 6),
 (30, '2020_11_30_101642_create_birthdays_table', 8),
-(35, '2020_11_30_064118_create_principal_s_m_s_table', 9);
+(35, '2020_11_30_064118_create_principal_s_m_s_table', 9),
+(38, '2014_10_12_000000_create_users_table', 1),
+(39, '2014_10_12_100000_create_password_resets_table', 1),
+(40, '2019_08_19_000000_create_failed_jobs_table', 1),
+(41, '2020_09_09_121627_create_categories_table', 1),
+(42, '2020_10_05_091123_create_doctors_table', 1),
+(43, '2020_10_05_091759_create_category_doctor_table', 1),
+(44, '2020_10_08_075534_create_shedules_table', 1),
+(45, '2020_10_10_041641_create_abouts_table', 1),
+(46, '2020_10_10_090744_create_missions_table', 1),
+(47, '2020_10_12_042244_create_administrations_table', 1),
+(48, '2020_10_14_060500_create_facilities_table', 1),
+(49, '2020_10_15_052930_create_dental_college_categories_table', 1),
+(50, '2020_10_15_071506_create_dental_college_posts_table', 1),
+(51, '2020_10_21_055814_create_curriculams_table', 1),
+(52, '2020_10_24_045118_create_admissions_table', 1),
+(53, '2020_10_25_060334_create_notices_table', 1),
+(54, '2020_10_28_154546_create_galleries_table', 1),
+(55, '2020_11_26_194449_create_news_table', 1),
+(56, '2020_11_28_181420_create_payment_rules_table', 1),
+(57, '2020_11_29_044056_create_payment_numbers_table', 1),
+(58, '2020_11_29_100455_create_blank_forms_table', 1),
+(59, '2020_11_30_064118_create_principal_s_m_s_table', 1),
+(60, '2020_11_30_101642_create_birthdays_table', 1),
+(61, '2020_12_06_191754_create_facilities_descriptions_table', 1);
 
 -- --------------------------------------------------------
 
@@ -542,17 +571,10 @@ INSERT INTO `payment_numbers` (`id`, `paymentNumber`, `transaction_ID`, `status`
 
 CREATE TABLE `payment_rules` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `information` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment_rules` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `payment_rules`
---
-
-INSERT INTO `payment_rules` (`id`, `information`, `created_at`, `updated_at`) VALUES
-(2, '01. Go to your bKash Mobile Menu by dialing *247# <br></br>\r\n\r\n02. Choose “Payment”<br>\r\n\r\n03. Enter the Merchant bKash Account Number you want to pay to<br>\r\n\r\n04. Enter the amount you want to pay<br>\r\n\r\n05. Enter a reference* against your payment (you can mention the purpose of the transaction in one word. e.g. Bill)<br>\r\n\r\n06. Enter the Counter Number* (the salesperson at the counter will tell you the number)<br>\r\n\r\n07. Now enter your bKash Mobile Menu PIN to confirm<br>\r\n', NULL, '2020-11-29 04:46:47');
 
 -- --------------------------------------------------------
 
@@ -576,8 +598,8 @@ CREATE TABLE `principal_s_m_s` (
 --
 
 INSERT INTO `principal_s_m_s` (`id`, `title`, `leftSide`, `rightSide`, `name`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Chairmain\'s Message', 'I am delighted to welcome you to the National English School Chittagong. With the grace of Almighty Allah, National English School Chittagong was founded in 2012 in the heart of this port city. Since its inception our school has been successfully serving the community and continues to be a school of choice for our local area.\r\nWe offer a broad and varied curriculum and a warm, caring, encouraging and intimate environment which enables our students to reach their own personal levels of excellence in the area of an academia, sport, culture and arts.\r\nWe have implemented our own educational method by focusing on the creation of next generation leaders with high ideals and humanity. That’s why our motto is “Learners today, Ieaders tomorow”.\r\nWe are fortunate to have talented, highly committed teachers here to ensure the learning environment of our students is the best it can be. We are committed to collaborate with parents to nurture an individual who possesses love for nation, society, community and moral and family values.\r\nWe also expect that we as a family will encourage students to persevere in face of challenges and adopt never give up spirit.\r\nThe achievements of our school in academic (100% A grade with GPA-5 in PECE and JSC exam) and extra curricular activities have been significant in the past several years. Here we collaborate, inspire and own to achieve our students dreams.\r\nOur commitment at National English School Chittagong is to provide a safe, positive, rigorous learning environment that will empower students to become creative problem solvers, critical thinkers and inspired learners prepared for careers and life in the twenty-first century.\r\nSeeking your cooperation in anticipation.', NULL, 'Md. Asad Ullah Adil', 'image/person_1.jpg', NULL, '2020-12-03 04:51:25'),
-(2, 'Director\'s Message', 'I am delighted to welcome you to the National English School Chittagong. With the grace of Almighty Allah, National English School Chittagong was founded in 2012 in the heart of this port city. Since its inception our school has been successfully serving the community and continues to be a school of choice for our local area.\r\nWe offer a broad and varied curriculum and a warm, caring, encouraging and intimate environment which enables our students to reach their own personal levels of excellence in the area of an academia, sport, culture and arts.\r\nWe have implemented our own educational method by focusing on the creation of next generation leaders with high ideals and humanity. That’s why our motto is “Learners today, Ieaders tomorow”.\r\nWe are fortunate to have talented, highly committed teachers here to ensure the learning environment of our students is the best it can be. We are committed to collaborate with parents to nurture an individual who possesses love for nation, society, community and moral and family values.\r\nWe also expect that we as a family will encourage students to persevere in face of challenges and adopt never give up spirit.\r\nThe achievements of our school in academic (100% A grade with GPA-5 in PECE and JSC exam) and extra curricular activities have been significant in the past several years. Here we collaborate, inspire and own to achieve our students dreams.\r\nOur commitment at National English School Chittagong is to provide a safe, positive, rigorous learning environment that will empower students to become creative problem solvers, critical thinkers and inspired learners prepared for careers and life in the twenty-first century.\r\nSeeking your cooperation in anticipation.\r\n', '', 'Md. Asad Ullah Adil', 'image/person_2.jpg', NULL, NULL),
+(1, 'Chairman\'s Message', '\r\nWith immense pride and great pleasure I welcome you to the National English School Chittagong website. With the most mercy of Almighty Allah, National English School was founded in 2012 in the main point of this port city.\r\nI invite you to navigate through our “online activities” to help you understand lucidly how our school provides the best environment for your little ones. Our institutions have marched forward to spread the light of education and pave the path of academic soundness & Moral excellence for every student.\r\nThe value and environment we provide for our children are sustainable. My sincere thanks to the school’s Principal, teachers, staffs, students & parents.\r\nOnce again I welcome you and sincerely hope that our website will rouse your interest and encourage you to take a step towards making one more positive difference in your life\r\nThank you and stay blessed.\r\n\r\nChairman, NESC.', NULL, 'Gulam Saifuddin Ahmed', 'image/person_1.png', NULL, '2020-12-03 04:51:25'),
+(2, 'Managing Director’s Message', '\r\nI am delighted to welcome you to the National English School Chittagong. With the grace of Almighty Allah, National English School Chittagong was founded in 2012 in the heart of this port city. Since our school has been successfully serving the community and suffices to be a school of choice for our local area.\r\nOur vision to “Educate, Enlighten and Empower”. We offer a varied curriculum and an encouraging and intimate environment which enable our students to reach their own perfection in the area of an academia, sports, culture and arts.\r\nOur motto is “Learners today, leaders tomorrow” our educational method by focusing on the creation of next generation leaders with high ideals. We also focus on morality and academic soundness.\r\nWe are enriched with highly committed teachers and dedicated staffs to confirm the school environment for students.\r\nLooking forward your co-operation in foreknowledge.\r\n', '', 'Dr. Mohammed Yusuf', 'image/person_2.jpg', NULL, NULL),
 (3, 'Principal\'s Message', 'I am delighted to welcome you to the National English School Chittagong. With the grace of Almighty Allah, National English School Chittagong was founded in 2012 in the heart of this port city. Since its inception our school has been successfully serving the community and continues to be a school of choice for our local area.\r\nWe offer a broad and varied curriculum and a warm, caring, encouraging and intimate environment which enables our students to reach their own personal levels of excellence in the area of an academia, sport, culture and arts.\r\nWe have implemented our own educational method by focusing on the creation of next generation leaders with high ideals and humanity. That’s why our motto is “Learners today, Ieaders tomorow”.\r\nWe are fortunate to have talented, highly committed teachers here to ensure the learning environment of our students is the best it can be. We are committed to collaborate with parents to nurture an individual who possesses love for nation, society, community and moral and family values.\r\nWe also expect that we as a family will encourage students to persevere in face of challenges and adopt never give up spirit.\r\nThe achievements of our school in academic (100% A grade with GPA-5 in PECE and JSC exam) and extra curricular activities have been significant in the past several years. Here we collaborate, inspire and own to achieve our students dreams.\r\nOur commitment at National English School Chittagong is to provide a safe, positive, rigorous learning environment that will empower students to become creative problem solvers, critical thinkers and inspired learners prepared for careers and life in the twenty-first century.\r\nSeeking your cooperation in anticipation.\r\n', 'We have implemented our own educational method by focusing on the creation of next generation leaders with high ideals and humanity. That’s why our motto is “Learners today leaders tomorrow”.', 'Md. Asad Ullah Adil', 'image/photo.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -698,6 +720,12 @@ ALTER TABLE `facilities`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `facilities_descriptions`
+--
+ALTER TABLE `facilities_descriptions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -814,7 +842,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `category_doctor`
 --
 ALTER TABLE `category_doctor`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `curriculams`
@@ -847,6 +875,12 @@ ALTER TABLE `facilities`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `facilities_descriptions`
+--
+ALTER TABLE `facilities_descriptions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -862,7 +896,7 @@ ALTER TABLE `galleries`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `missions`
@@ -892,7 +926,7 @@ ALTER TABLE `payment_numbers`
 -- AUTO_INCREMENT for table `payment_rules`
 --
 ALTER TABLE `payment_rules`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `principal_s_m_s`

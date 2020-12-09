@@ -212,7 +212,7 @@
             <div class="border p-4">
 
             @foreach($payment_rules as $payment_rule)
-               <p> -> {{$i}}) {{ $payment_rule->payment_rules }}</p>
+               <p> {{$i}}) {{ $payment_rule->payment_rules }}</p>
                <hr>
                 @php $i = $i+1; @endphp   
             @endforeach
@@ -221,8 +221,6 @@
 
       </div>
       <div class="row mt-2">
-
-         
       </div>
    </form>
 </div>
