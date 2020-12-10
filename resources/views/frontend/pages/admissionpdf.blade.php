@@ -167,7 +167,7 @@
         &nbsp; &nbsp;<input type="checkbox" {{$app->transports == 2 ? "checked" : ""}}>&nbsp;<span>Own Transports</span>
         &nbsp; &nbsp;<input type="checkbox" {{$app->transports == 3 ? "checked" : ""}}> &nbsp;<span>School Transports</span> 
         <div class="mt-2"><span>Name and address of local guardian (with cell number):</span><input type="text" style="width: 350px"></div>
-        <span class="float-left">Declaration :</span><span style="text-align:center" class="d-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, consequatur quidem dicta facere enim, quos vero asperiores explicabo ipsam voluptatum </span>
+        <span class="float-left">Declaration :</span><span style="text-align:center" class="d-block">We declare that the information given above is true. We understand and agree that the school's decision on matters of admission and the child participation in the school will be final.</span>
         <div class="mt-1">
             <div class="d-inline"><span>Date:</span><input type="text" style="width: 178px"> </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -177,7 +177,7 @@
     </div>
     <div class="" style="background-color:#FFE6C8; padding: 10px;">
         <p class="text-center p-0 m-0">Items to be submitted with application</p>
-        <span class="text-center d-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet voluptatibus saepe cum dignissimos neque doloribus laboriosam doloremque quas cumque?</span>
+        <span class="text-center d-block" style="text-transform: capitalize;">Photocopy of Birth certificate, 3 copies of PP size coloured photographs of student, one copy of PP size photograph of both father and mother, photocopy of progress report and photocopy of parents NID.</span>
 
     </div>
     <h6 style="color: 413F7F" class="text-center">[FOR OFFICIAL USE]</h6>

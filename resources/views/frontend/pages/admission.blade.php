@@ -21,6 +21,13 @@
             <h3 class="h2">Particulars</h3>
          </div>
          <div class="col-md-6 p-4 p-md-5 bg-light">
+
+            <div class="form-check mb-1 form-group">
+               <p>Admission Type :</p>
+               <label><input type="radio" name="admission_type" value="1" class="ml-2">&nbsp; New Admission</label>
+               <label><input type="radio" name="admission_type" value="2" class="ml-2">&nbsp;Readmission</label>               
+            </div>
+
             <div class="form-group">
                <input type="text" class="form-control" placeholder="Your Name [English]" name="name_eng" value="{{ old('name_eng') }}">
                @error('name_eng')

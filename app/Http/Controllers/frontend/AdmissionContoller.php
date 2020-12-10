@@ -20,9 +20,10 @@ class AdmissionContoller extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $request->validate([
-         'email'=>'required|email|unique:admissions',
-         "name_eng" => "required",
+        $request->validate([ 
+        "admission_type" => "required",            
+        'email'=>'required|email|unique:admissions',
+        "name_eng" => "required",
         "name_bng" => "required",
         "dob" => "required",
         "nationality" => "required",
@@ -47,7 +48,8 @@ class AdmissionContoller extends Controller
         "mother_contact" => "required",
         "transports" => "required",
         ]);
-        $admission = new Admission;
+        $admission = new Admission; 
+        $admission->admission_type = $request->admission_type;
         $admission->email = $request->email;
         $admission->name_eng = $request->name_eng;
         $admission->name_bng = $request->name_bng;
