@@ -9,7 +9,7 @@
 @section('content')
 <form role="form" method="POST" action="{{ route('teacher.store') }}" enctype="multipart/form-data">
     @csrf
-= <div class="row">
+<div class="row">
     <div class="col-12 col-md-6 mt-4">
         <div class="card">
             <div class="card-header">

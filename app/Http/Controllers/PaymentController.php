@@ -61,6 +61,15 @@ class PaymentController extends Controller{
          ->where('transaction_ID', $request->Transaction_ID)
          ->where('status', 1)->count()  == 1 ){
 
+         // paymentNumber::where($category_id);
+         $abc = paymentNumber::where('paymentNumber', $request->paymentNumber)
+         ->where('transaction_ID', $request->Transaction_ID)
+         ->where('status', 1);
+
+         $abc2=$abc->status = false;
+            $abc2->save();
+
+
          $validated = $request->validate([
             'name_eng'=> 'required',
             'father_name_eng'=> 'required',
@@ -76,7 +85,6 @@ class PaymentController extends Controller{
          $data['age'] = \Carbon\Carbon::parse($data['dob'])->age;
 
          $pdf = PDF::loadView('frontend.pages.pdfdownload', $data);
-        // return view('frontend.pages.admissionpdf',$data);
          return $pdf->setPaper('a4','potrait')->stream('invoice.pdf');
 
         //return back()->with('success','Payment add successfully');

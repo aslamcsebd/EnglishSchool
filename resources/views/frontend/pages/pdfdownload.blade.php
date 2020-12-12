@@ -73,6 +73,11 @@
      </div>    
     <div class="body">
         <h1 class="watermark">ADDMISSION FORM</h1>
+
+        <div>
+            <span >Admission Form</span><input type="text" style="width:100px" value=""> <br>
+         </div>
+
         <div>
             <span >Full Name: (In Capital Letter)</span><input type="text" style="width:450px" value="{{$name_eng}}"> <br>
         </div>

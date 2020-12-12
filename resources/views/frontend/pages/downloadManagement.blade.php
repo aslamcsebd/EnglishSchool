@@ -51,20 +51,20 @@
                         <div class="modal-body">
                            <div class="form-group">
                               <label for="recipient-name" class="col-form-label">Student Name:</label>
-                              <input type="text" class="form-control" id="recipient-name" placeholder="[Student]" name="name_eng">
+                              <input type="text" class="form-control" id="recipient-name" placeholder="[Student]" name="name_eng" required>
                            </div>
                            <div class="form-group">
                               <label for="recipient-name2" class="col-form-label">Father's Name:</label>
-                              <input type="text" class="form-control" id="recipient-name2" placeholder="[Father]" name="father_name_eng">
+                              <input type="text" class="form-control" id="recipient-name2" placeholder="[Father]" name="father_name_eng" required>
                            </div>
                            <div class="form-group">
                               <label for="recipient-name3" class="col-form-label">Mother's Name:</label>
-                              <input type="text" class="form-control" id="recipient-name3" placeholder="[Mother]" name="mother_name_eng">
+                              <input type="text" class="form-control" id="recipient-name3" placeholder="[Mother]" name="mother_name_eng" required>
                            </div>
 
                            <div class="form-group">
                               <label for="">Date of Birth</label>
-                              <input type="date" class="form-control" placeholder="Your Date of birth" name="dob" value="{{ old('dob') }}">
+                              <input type="date" class="form-control" placeholder="Your Date of birth" name="dob" value="{{ old('dob') }}" required>
                               @error('dob')
                                  <div class="alert alert-danger p-1" style="font-size: 10px">{{ $message }}</div>
                               @enderror
@@ -89,7 +89,7 @@
 
                                  <div class="form-group">
                                     <label for="recipient-name5" class="col-form-label">Payment Number:</label>
-                                    <input type="text" class="form-control" placeholder="Enter Transaction ID" id="recipient-name5" name="paymentNumber">
+                                    <input type="text" class="form-control" placeholder="Enter Transaction ID" id="recipient-name5" name="paymentNumber" required>
                                  </div>    
 
 
@@ -97,7 +97,7 @@
                               <div class="col">
                                  <div class="form-group">
                                     <label for="recipient-name5" class="col-form-label">Transaction_ID:</label>
-                                    <input type="text" class="form-control" placeholder="Enter Transaction ID" id="recipient-name5" name="Transaction_ID">
+                                    <input type="text" class="form-control" placeholder="Enter Transaction ID" id="recipient-name5" name="Transaction_ID" required>
                                  </div>                              
                               </div>
                            </div>                       
@@ -154,7 +154,7 @@
                                              <div class="modal-dialog modal-lg">
                                                 <div class="modal-content bg-info">
                                                    <div class="modal-header">
-                                                      <h4 class="modal-title">View Student Application</h4>
+                                                      <h4 class="modal-title text-light">View Student Application</h4>
                                                    </div>
                                                    <div class="modal-body">                                                      
                                                       <div class="row justify-content-center">

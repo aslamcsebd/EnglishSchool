@@ -9,13 +9,7 @@ use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
-class AdministrationController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+class AdministrationController extends Controller{
     public function index()
     {
         $data['admins'] = Administration::all();

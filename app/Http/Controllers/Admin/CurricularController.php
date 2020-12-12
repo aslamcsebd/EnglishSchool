@@ -56,10 +56,10 @@ class CurricularController extends Controller
                 "image" => 'required|image|mimes:jpeg,png',
                 ]);
 
-                if(!Storage::disk('public')->exists('curricular'))
-                {
-                    Storage::disk('public')->makeDirectory('curricular');
-                } 
+                // if(!Storage::disk('public')->exists('curricular'))
+                // {
+                //     Storage::disk('public')->makeDirectory('curricular');
+                // } 
             
             $file = $request->file('image');
             $file_ext = $file->getClientOriginalExtension();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 09, 2020 at 03:10 AM
+-- Generation Time: Dec 12, 2020 at 03:27 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -74,6 +74,7 @@ INSERT INTO `administrations` (`id`, `name`, `degree`, `role`, `image`, `created
 
 CREATE TABLE `admissions` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `admission_type` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name_eng` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name_bng` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -109,15 +110,17 @@ CREATE TABLE `admissions` (
 -- Dumping data for table `admissions`
 --
 
-INSERT INTO `admissions` (`id`, `email`, `name_eng`, `name_bng`, `dob`, `nationality`, `religion`, `father_name_eng`, `father_name_bng`, `mother_name_eng`, `mother_name_bng`, `per_add`, `mailing_add`, `sla`, `moi`, `last_place`, `find_out`, `curricular`, `challanged`, `father_occupation`, `mother_occupation`, `father_nid`, `mother_nid`, `father_contact`, `mother_contact`, `father_fb`, `mother_fb`, `transports`, `created_at`, `updated_at`) VALUES
-(3, 'forkanalam295@gmail.com', 'asdf', 'asdf', '2020-11-14', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asd', 'asdf', 'asdf', 'sadf', '1', 'asdf', 0, 'sdf', 'asdf', 234234, 23423, '2342342', '34234234', NULL, NULL, '1', '2020-11-13 18:38:20', '2020-11-13 18:38:20'),
-(4, '2a@gmail.com', 'as', 'as', '1994-11-10', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'a@gmail.com', 'fgf', 'fgf', 'fgfg', '1', 'fgfg', 1, 'dsd', 'sds', 22121, 12121, '221', '1212', 'fa.com', 'bf.com', '1', '2020-11-27 20:59:32', '2020-11-27 20:59:32'),
-(5, 'as@gmail.com', 'asas', 'asas', '1994-11-10', 'sdd', 'sdsd', 'sds', 'sdsd', 'sdsd', 'sdsd', 'sds', 'a@gmail.com', 'dsd', 'sd', 'sd', '1', 'ds', 1, 'dsd', 'sds', 122, 121, '121', '12', 'hgh', 'ghgh', '1', '2020-11-28 03:30:29', '2020-11-28 03:30:29'),
-(6, 'asa@gmail.com', 'asas', 'asas', '1994-11-10', 'sdd', 'sdsd', 'sds', 'sdsd', 'sdsd', 'sdsd', 'sds', 'a@gmail.com', 'dsd', 'sd', 'sd', '1', 'ds', 1, 'dsd', 'sds', 122, 121, '121', '12', 'hgh', 'ghgh', '1', '2020-11-28 03:43:32', '2020-11-28 03:43:32'),
-(7, 'aslamhossainctg@gmail.com', 'Aslam', 'Aslam', '1994-10-10', 'Bangladesh', 'Islam', 'Siful Islam', 'Saiful Islam', 'Dalia Begum', 'Dalia Begum', 'Agrabad', 'aslam@gmail.com', 'Dae', 'Bangla', 'Five', '1', 'Playing Footbal', 1, 'Farmer', 'House Wife', 123321, 456654, '0168067293', '01680607293', 'facebook.com/father', 'facebook.com/mother', '1', '2020-11-29 20:59:59', '2020-11-29 20:59:59'),
-(8, 'adfsd@gmail.com', 'aslam', 'sdsd', '2020-10-30', 'aa', 'ghgh', 'cgcg', 'ghghhg', 'Dalia Begum', 'ghgh', 'ghgh', 'asd@gmail.com', 'Dae', 'dfdf', 'fgfg', '1', 'fgfg', 1, 'dfdf', 'df', 123321, 2323, '0168067293', '01680607293', 'fa.com', 'fb2.com', '1', '2020-11-29 21:09:07', '2020-11-29 21:09:07'),
-(9, '2vcva@gmail.com', 'aslam', 'sdsd', '2020-11-04', 'aa', 'aa', 'cgcg', 'ghghhg', 'fgfg', 'ghgh', 'ghgh', 'asd@gmail.com', 'fddf', 'dfdf', 'dfdf', '1', 'fgfg', 1, 'dfdf', 'df', 232, 2323, '323', '232', 'fa.com', 'facebook.com/mother', '1', '2020-11-29 21:11:26', '2020-11-29 21:11:26'),
-(10, '2\'\'bnba@gmail.com', 'aslam', 'sdsd', '2020-10-27', 'aa', 'Islam', 'cgcg', 'Saiful Islam', 'gjgj', 'aa', 'ghgh', 'asd@gmail.com', 'fddf', 'dfdf', 'dfdf', '1', 'fgfg', 1, 'dfdf', 'sds', 232, 2323, '323', '232', 'fa.com', 'fb2.com', '1', '2020-11-29 21:12:44', '2020-11-29 21:12:44');
+INSERT INTO `admissions` (`id`, `admission_type`, `email`, `name_eng`, `name_bng`, `dob`, `nationality`, `religion`, `father_name_eng`, `father_name_bng`, `mother_name_eng`, `mother_name_bng`, `per_add`, `mailing_add`, `sla`, `moi`, `last_place`, `find_out`, `curricular`, `challanged`, `father_occupation`, `mother_occupation`, `father_nid`, `mother_nid`, `father_contact`, `mother_contact`, `father_fb`, `mother_fb`, `transports`, `created_at`, `updated_at`) VALUES
+(3, '', 'forkanalam295@gmail.com', 'asdf', 'asdf', '2020-11-14', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asdf', 'asd', 'asdf', 'asdf', 'sadf', '1', 'asdf', 0, 'sdf', 'asdf', 234234, 23423, '2342342', '34234234', NULL, NULL, '1', '2020-11-13 18:38:20', '2020-11-13 18:38:20'),
+(4, '', '2a@gmail.com', 'as', 'as', '1994-11-10', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'a@gmail.com', 'fgf', 'fgf', 'fgfg', '1', 'fgfg', 1, 'dsd', 'sds', 22121, 12121, '221', '1212', 'fa.com', 'bf.com', '1', '2020-11-27 20:59:32', '2020-11-27 20:59:32'),
+(5, '', 'as@gmail.com', 'asas', 'asas', '1994-11-10', 'sdd', 'sdsd', 'sds', 'sdsd', 'sdsd', 'sdsd', 'sds', 'a@gmail.com', 'dsd', 'sd', 'sd', '1', 'ds', 1, 'dsd', 'sds', 122, 121, '121', '12', 'hgh', 'ghgh', '1', '2020-11-28 03:30:29', '2020-11-28 03:30:29'),
+(6, '', 'asa@gmail.com', 'asas', 'asas', '1994-11-10', 'sdd', 'sdsd', 'sds', 'sdsd', 'sdsd', 'sdsd', 'sds', 'a@gmail.com', 'dsd', 'sd', 'sd', '1', 'ds', 1, 'dsd', 'sds', 122, 121, '121', '12', 'hgh', 'ghgh', '1', '2020-11-28 03:43:32', '2020-11-28 03:43:32'),
+(7, '', 'aslamhossainctg@gmail.com', 'Aslam', 'Aslam', '1994-10-10', 'Bangladesh', 'Islam', 'Siful Islam', 'Saiful Islam', 'Dalia Begum', 'Dalia Begum', 'Agrabad', 'aslam@gmail.com', 'Dae', 'Bangla', 'Five', '1', 'Playing Footbal', 1, 'Farmer', 'House Wife', 123321, 456654, '0168067293', '01680607293', 'facebook.com/father', 'facebook.com/mother', '1', '2020-11-29 20:59:59', '2020-11-29 20:59:59'),
+(8, '', 'adfsd@gmail.com', 'aslam', 'sdsd', '2020-10-30', 'aa', 'ghgh', 'cgcg', 'ghghhg', 'Dalia Begum', 'ghgh', 'ghgh', 'asd@gmail.com', 'Dae', 'dfdf', 'fgfg', '1', 'fgfg', 1, 'dfdf', 'df', 123321, 2323, '0168067293', '01680607293', 'fa.com', 'fb2.com', '1', '2020-11-29 21:09:07', '2020-11-29 21:09:07'),
+(9, '', '2vcva@gmail.com', 'aslam', 'sdsd', '2020-11-04', 'aa', 'aa', 'cgcg', 'ghghhg', 'fgfg', 'ghgh', 'ghgh', 'asd@gmail.com', 'fddf', 'dfdf', 'dfdf', '1', 'fgfg', 1, 'dfdf', 'df', 232, 2323, '323', '232', 'fa.com', 'facebook.com/mother', '1', '2020-11-29 21:11:26', '2020-11-29 21:11:26'),
+(10, '', '2\'\'bnba@gmail.com', 'aslam', 'sdsd', '2020-10-27', 'aa', 'Islam', 'cgcg', 'Saiful Islam', 'gjgj', 'aa', 'ghgh', 'asd@gmail.com', 'fddf', 'dfdf', 'dfdf', '1', 'fgfg', 1, 'dfdf', 'sds', 232, 2323, '323', '232', 'fa.com', 'fb2.com', '1', '2020-11-29 21:12:44', '2020-11-29 21:12:44'),
+(11, '1', 'aslam@gmail.com', 'ghghh', 'ghghg', '2020-12-22', 'hgghg', 'ghghg', 'ghgh', 'bbvbv', 'vbvb', 'vbvbv', 'vbvb', 'vbvb@gmail.com', 'fgfgf', 'fgfgfg', 'fgfgf', '1', 'fgfg', 1, 'fgfgfg', 'fgfgfg', 3223, 2323, '2323', '2323', 'bvbvbv', 'vbvbv', '1', '2020-12-11 10:53:59', '2020-12-11 10:53:59'),
+(12, 'New Admission', 'aslmnnmam@gmail.com', 'Aslam', 'ghghg', '2020-12-15', 'hgghg', 'ghghg', 'ghgh', 'bbvbv', 'vbvb', 'vbvbv', 'vbvb', 'vbvb@gmail.com', 'fgfgf', 'fgfgfg', 'fgfgf', '1', 'fgfg', 1, 'fgfgfg', 'fgfgfg', 3223, 2323, '2323', '2323', 'bvbvbv', 'vbvbv', '2', '2020-12-11 10:58:32', '2020-12-11 10:58:32');
 
 -- --------------------------------------------------------
 
@@ -170,7 +173,14 @@ INSERT INTO `blank_forms` (`id`, `name_eng`, `father_name_eng`, `mother_name_eng
 (7, 'Aslam', 'aa', 'aa', '2019-12-12', '2020-11-30 00:07:19', '2020-11-30 00:07:19'),
 (8, 'aslam', 'father', 'mother', '1990-11-06', '2020-11-30 00:11:15', '2020-11-30 00:11:15'),
 (9, 'Aslam', 'siful', 'Mother name', '1990-12-15', '2020-11-30 23:24:23', '2020-11-30 23:24:23'),
-(10, 'Aslam', 'father', 'Mother name', '1990-12-08', '2020-11-30 23:32:04', '2020-11-30 23:32:04');
+(10, 'Aslam', 'father', 'Mother name', '1990-12-08', '2020-11-30 23:32:04', '2020-11-30 23:32:04'),
+(11, 'jkhjkk', 'jkjkj', 'jkjkj', '2020-12-21', '2020-12-09 11:40:44', '2020-12-09 11:40:44'),
+(12, 'jkhjkk', 'jkjkj', 'jkjkj', '2020-12-21', '2020-12-09 11:41:05', '2020-12-09 11:41:05'),
+(13, 'aslam', 'fdfd', 'dfdf', '2020-12-23', '2020-12-09 12:02:30', '2020-12-09 12:02:30'),
+(14, 'aslam', 'fdfd', 'dfdf', '2020-12-23', '2020-12-09 12:03:11', '2020-12-09 12:03:11'),
+(15, 'ghghh', 'ghgh', 'vbvb', '2020-12-25', '2020-12-11 11:11:57', '2020-12-11 11:11:57'),
+(16, 'ghghh', 'ghgh', 'vbvb', '2020-12-25', '2020-12-11 11:12:13', '2020-12-11 11:12:13'),
+(17, 'ghghh', 'ghgh', 'vbvb', '2020-12-25', '2020-12-11 11:13:13', '2020-12-11 11:13:13');
 
 -- --------------------------------------------------------
 
@@ -211,6 +221,31 @@ CREATE TABLE `category_doctor` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `class_times`
+--
+
+CREATE TABLE `class_times` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `class` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `summer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `winter` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `class_times`
+--
+
+INSERT INTO `class_times` (`id`, `class`, `summer`, `winter`, `created_at`, `updated_at`) VALUES
+(1, 'Play, Nursery ', '8:15 AM - 11:20 AM', '8:30 AM - 11:35 AM', NULL, NULL),
+(2, 'KG, STD I & II', '8:15 AM - 12:45 PM', '8:30 AM - 1:00 PM', NULL, NULL),
+(3, 'STD III To Class IX', '8:15 AM - 1:30 PM', '8:30 AM - 1:45 PM', NULL, NULL),
+(4, 'Entrance Time', 'Summer : 8:30 AM', 'Winter : 8:15 AM', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -314,12 +349,12 @@ CREATE TABLE `facilities` (
 --
 
 INSERT INTO `facilities` (`id`, `title`, `description`, `icon`, `created_at`, `updated_at`) VALUES
-(2, 'Regular Classes', 'We are taking classes in regular basis so that students can learn everyday and make them learned  in proper way.', 'fas fa-user-graduate', '2020-11-10 09:04:42', '2020-11-10 09:04:42'),
-(6, 'Sports Facilities', 'School sports facilities are used to deliver the formal curriculum, increase participation levels and provide facilities for the wider community.', 'fas fa-running', '2020-11-10 09:15:43', '2020-11-10 09:15:43'),
-(7, 'Adequate Classrooms', 'Adequate classrooms to accommodate students  in comfortable learning environment.', 'fas fa-school', '2020-11-16 06:34:37', '2020-11-16 06:36:11'),
-(8, 'Certified Teachers', 'Certified teachers to address the educational and interpersonal needs of students.', 'fas fa-user-check', '2020-11-16 06:39:27', '2020-11-16 06:39:27'),
-(9, 'Safety First', 'Delivery of education in a safe and healthy environment.', 'fas fa-hard-hat', '2020-11-16 06:44:41', '2020-11-16 06:44:41'),
-(10, 'Religious Practice', 'Against the background of fast eroding moral and religious values, efforts are taken so that the children uphold religious and moral values.', 'fas fa-praying-hands', '2020-11-16 06:54:40', '2020-11-16 06:54:40');
+(1, 'Regular Classes', 'We are taking classes in regular basis so that students can learn everyday and make them learned  in proper way.', 'fas fa-user-graduate', '2020-11-10 09:04:42', '2020-11-10 09:04:42'),
+(2, 'Sports Facilities', 'School sports facilities are used to deliver the formal curriculum, increase participation levels and provide facilities for the wider community.', 'fas fa-running', '2020-11-10 09:15:43', '2020-11-10 09:15:43'),
+(3, 'Adequate Classrooms', 'Adequate classrooms to accommodate students  in comfortable learning environment.', 'fas fa-school', '2020-11-16 06:34:37', '2020-11-16 06:36:11'),
+(4, 'Certified Teachers', 'Certified teachers to address the educational and interpersonal needs of students.', 'fas fa-user-check', '2020-11-16 06:39:27', '2020-11-16 06:39:27'),
+(5, 'Safety First', 'Delivery of education in a safe and healthy environment.', 'fas fa-hard-hat', '2020-11-16 06:44:41', '2020-11-16 06:44:41'),
+(6, 'Religious Practice', 'Against the background of fast eroding moral and religious values, efforts are taken so that the children uphold religious and moral values.', 'fas fa-praying-hands', '2020-11-16 06:54:40', '2020-11-16 06:54:40');
 
 -- --------------------------------------------------------
 
@@ -334,6 +369,27 @@ CREATE TABLE `facilities_descriptions` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `facilities_descriptions`
+--
+
+INSERT INTO `facilities_descriptions` (`id`, `facilities_ID`, `descriptions`, `created_at`, `updated_at`) VALUES
+(33, 1, 'We are taking classes in regular basis.', NULL, NULL),
+(34, 1, 'students can learn everyday and make them learned  in proper way.', NULL, NULL),
+(35, 2, 'School sports facilities are used to deliver the formal curriculum', NULL, NULL),
+(36, 2, 'increase participation levels', NULL, NULL),
+(37, 2, 'provide facilities for the wider community.', NULL, NULL),
+(38, 3, 'Adequate classrooms to accommodate students', NULL, NULL),
+(39, 3, 'comfortable learning environment.', NULL, NULL),
+(40, 4, 'Certified teachers to address the educational', NULL, NULL),
+(41, 4, 'interpersonal needs of students.', NULL, NULL),
+(42, 5, 'Delivery of education in a safe', NULL, NULL),
+(43, 5, 'healthy environment.', NULL, NULL),
+(44, 6, 'Against the background of fast eroding moral', NULL, NULL),
+(45, 6, 'and religious values', NULL, NULL),
+(46, 6, 'efforts are taken ', NULL, NULL),
+(47, 6, 'so that the children uphold religious and moral values.', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -443,7 +499,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (58, '2020_11_29_100455_create_blank_forms_table', 1),
 (59, '2020_11_30_064118_create_principal_s_m_s_table', 1),
 (60, '2020_11_30_101642_create_birthdays_table', 1),
-(61, '2020_12_06_191754_create_facilities_descriptions_table', 1);
+(61, '2020_12_06_191754_create_facilities_descriptions_table', 1),
+(62, '2020_12_11_110042_create_class_times_table', 10);
 
 -- --------------------------------------------------------
 
@@ -689,6 +746,12 @@ ALTER TABLE `category_doctor`
   ADD KEY `category_doctor_category_id_foreign` (`category_id`);
 
 --
+-- Indexes for table `class_times`
+--
+ALTER TABLE `class_times`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `curriculams`
 --
 ALTER TABLE `curriculams`
@@ -818,7 +881,7 @@ ALTER TABLE `administrations`
 -- AUTO_INCREMENT for table `admissions`
 --
 ALTER TABLE `admissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `birthdays`
@@ -830,7 +893,7 @@ ALTER TABLE `birthdays`
 -- AUTO_INCREMENT for table `blank_forms`
 --
 ALTER TABLE `blank_forms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -843,6 +906,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `category_doctor`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `class_times`
+--
+ALTER TABLE `class_times`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `curriculams`
@@ -872,13 +941,13 @@ ALTER TABLE `doctors`
 -- AUTO_INCREMENT for table `facilities`
 --
 ALTER TABLE `facilities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `facilities_descriptions`
 --
 ALTER TABLE `facilities_descriptions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -896,7 +965,7 @@ ALTER TABLE `galleries`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `missions`

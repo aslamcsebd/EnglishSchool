@@ -24,8 +24,8 @@
 
             <div class="form-check mb-1 form-group">
                <p>Admission Type :</p>
-               <label><input type="radio" name="admission_type" value="1" class="ml-2">&nbsp; New Admission</label>
-               <label><input type="radio" name="admission_type" value="2" class="ml-2">&nbsp;Readmission</label>               
+               <label><input type="radio" name="admission_type" value="New Admission" class="ml-2" required="">&nbsp; New Admission</label>
+               <label><input type="radio" name="admission_type" value="Readmission" class="ml-2" required="">&nbsp;Readmission</label>               
             </div>
 
             <div class="form-group">
