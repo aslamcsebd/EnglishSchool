@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 12, 2020 at 10:00 AM
+-- Generation Time: Dec 13, 2020 at 11:42 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -414,9 +414,8 @@ CREATE TABLE `failed_jobs` (
 --
 
 CREATE TABLE `galleries` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` bigint(20) NOT NULL,
+  `gallery_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -425,17 +424,62 @@ CREATE TABLE `galleries` (
 -- Dumping data for table `galleries`
 --
 
-INSERT INTO `galleries` (`id`, `title`, `image`, `created_at`, `updated_at`) VALUES
-(8, 'Chess Competition 2019', 'Chess Competition 2019.jpg', '2020-11-16 07:28:38', '2020-11-16 07:28:38'),
-(9, 'Victory Day', '4.jpg', '2020-11-16 07:30:11', '2020-11-16 07:30:11'),
-(10, 'Online class', '5.jpeg', '2020-11-16 07:38:31', '2020-11-16 07:38:31'),
-(13, 'Parents meeting', '8.jpg', '2020-11-16 07:39:56', '2020-11-16 07:39:56'),
-(15, 'Class party 2019', '10.jpg', '2020-11-16 09:32:15', '2020-11-16 09:32:15'),
-(18, 'Birthday Party', '13.jpg', '2020-11-16 09:39:26', '2020-11-16 09:39:26'),
-(21, 'PECE Dua ending program', '16.jpg', '2020-11-16 09:44:34', '2020-11-16 09:44:34'),
-(23, 'Classroom', '18.jpg', '2020-11-16 09:48:15', '2020-11-16 09:48:15'),
-(25, 'Assembly', '20.jpg', '2020-11-16 09:51:05', '2020-11-16 09:51:05'),
-(26, 'Chess Competition 2019', 'Chess Competition 2019.jpg', NULL, NULL);
+INSERT INTO `galleries` (`id`, `gallery_title`, `created_at`, `updated_at`) VALUES
+(1, 'Chess Competition 2019', '2020-11-16 07:28:38', '2020-11-16 07:28:38'),
+(2, 'Victory Day', '2020-11-16 07:30:11', '2020-11-16 07:30:11'),
+(3, 'Online class', '2020-11-16 07:38:31', '2020-11-16 07:38:31'),
+(4, 'Parents meeting', '2020-11-16 07:39:56', '2020-11-16 07:39:56'),
+(5, 'Class party 2019', '2020-11-16 09:32:15', '2020-11-16 09:32:15'),
+(6, 'Birthday Party', '2020-11-16 09:39:26', '2020-11-16 09:39:26'),
+(7, 'PECE Dua ending program', '2020-11-16 09:44:34', '2020-11-16 09:44:34'),
+(8, 'Classroom', '2020-11-16 09:48:15', '2020-11-16 09:48:15'),
+(9, 'Assembly', '2020-11-16 09:51:05', '2020-11-16 09:51:05'),
+(10, 'Chess Competition 2019', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gallery_image_lists`
+--
+
+CREATE TABLE `gallery_image_lists` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `gallery_title_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `gallery_image_lists`
+--
+
+INSERT INTO `gallery_image_lists` (`id`, `gallery_title_id`, `photo`, `created_at`, `updated_at`) VALUES
+(12, '1', 'e3748d425e.jpeg', '2020-12-13 04:46:39', '2020-12-13 04:46:39'),
+(13, '1', 'cc27553d98.jpg', '2020-12-13 04:46:39', '2020-12-13 04:46:39'),
+(14, '1', 'd77ab844de.jpg', '2020-12-13 04:46:39', '2020-12-13 04:46:39'),
+(15, '1', '3a6429cc33.jpg', '2020-12-13 04:46:39', '2020-12-13 04:46:39'),
+(16, '1', '7b0775d9f9.jpg', '2020-12-13 04:46:39', '2020-12-13 04:46:39'),
+(17, '1', '621a3d2e1f.jpg', '2020-12-13 04:46:39', '2020-12-13 04:46:39'),
+(18, '1', 'e28015b35b.jpg', '2020-12-13 04:46:39', '2020-12-13 04:46:39'),
+(19, '1', '99dc23b255.jpg', '2020-12-13 04:46:39', '2020-12-13 04:46:39'),
+(20, '2', 'b8f2a07905.jpg', '2020-12-13 04:47:03', '2020-12-13 04:47:03'),
+(21, '2', '45db0f6074.jpg', '2020-12-13 04:47:03', '2020-12-13 04:47:03'),
+(22, '2', '5803c22f28.jpg', '2020-12-13 04:47:03', '2020-12-13 04:47:03'),
+(23, '2', '0055b6b201.jpg', '2020-12-13 04:47:03', '2020-12-13 04:47:03'),
+(24, '2', '5f6e5a1e52.jpg', '2020-12-13 04:47:03', '2020-12-13 04:47:03'),
+(25, '2', '4070c9f2a8.jpg', '2020-12-13 04:47:03', '2020-12-13 04:47:03'),
+(26, '3', '174d39cdfc.jpg', '2020-12-13 04:47:24', '2020-12-13 04:47:24'),
+(27, '3', 'e699012bf2.jpg', '2020-12-13 04:47:24', '2020-12-13 04:47:24'),
+(28, '3', 'af50f2cd89.jpeg', '2020-12-13 04:47:24', '2020-12-13 04:47:24'),
+(29, '3', '8eede92191.jpg', '2020-12-13 04:47:24', '2020-12-13 04:47:24'),
+(30, '3', '3890ffdc07.jpg', '2020-12-13 04:47:24', '2020-12-13 04:47:24'),
+(31, '4', 'c4a63c8dc2.jpg', '2020-12-13 04:47:47', '2020-12-13 04:47:47'),
+(32, '4', '00085b4154.jpeg', '2020-12-13 04:47:47', '2020-12-13 04:47:47'),
+(33, '4', '69add4ec7a.jpg', '2020-12-13 04:47:47', '2020-12-13 04:47:47'),
+(34, '4', '2d6cc06b41.jpg', '2020-12-13 04:47:47', '2020-12-13 04:47:47'),
+(35, '4', '868be7645e.jpg', '2020-12-13 04:47:47', '2020-12-13 04:47:47'),
+(36, '4', 'a81340b30f.jpg', '2020-12-13 04:47:47', '2020-12-13 04:47:47');
 
 -- --------------------------------------------------------
 
@@ -470,7 +514,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (14, '2020_10_21_055814_create_curriculams_table', 1),
 (15, '2020_10_24_045118_create_admissions_table', 1),
 (16, '2020_10_25_060334_create_notices_table', 1),
-(17, '2020_10_28_154546_create_galleries_table', 1),
 (20, '2020_11_26_194449_create_news_table', 2),
 (22, '2020_11_28_181420_create_payment_rules_table', 4),
 (25, '2020_11_29_044056_create_payment_numbers_table', 5),
@@ -503,7 +546,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (61, '2020_12_06_191754_create_facilities_descriptions_table', 1),
 (62, '2020_12_11_110042_create_class_times_table', 10),
 (63, '2020_12_12_070243_create_teacher_designations_table', 11),
-(64, '2020_12_12_072704_create_teacher_lists_table', 12);
+(64, '2020_12_12_072704_create_teacher_lists_table', 12),
+(65, '2020_12_13_085209_create_galleries_table', 13),
+(66, '2020_12_13_094230_create_gallery_image_lists_table', 14);
 
 -- --------------------------------------------------------
 
@@ -693,6 +738,13 @@ CREATE TABLE `teacher_lists` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `teacher_lists`
+--
+
+INSERT INTO `teacher_lists` (`id`, `designation_id`, `teacherName`, `qualification`, `photo`, `created_at`, `updated_at`) VALUES
+(7, '1', 'Md. Asad Ullah Adil', 'ssc', 'Md. Asad Ullah Adil.jpg', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -818,6 +870,12 @@ ALTER TABLE `failed_jobs`
 -- Indexes for table `galleries`
 --
 ALTER TABLE `galleries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gallery_image_lists`
+--
+ALTER TABLE `gallery_image_lists`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -979,7 +1037,7 @@ ALTER TABLE `facilities`
 -- AUTO_INCREMENT for table `facilities_descriptions`
 --
 ALTER TABLE `facilities_descriptions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -991,13 +1049,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `gallery_image_lists`
+--
+ALTER TABLE `gallery_image_lists`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `missions`
@@ -1021,7 +1085,7 @@ ALTER TABLE `notices`
 -- AUTO_INCREMENT for table `payment_numbers`
 --
 ALTER TABLE `payment_numbers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `payment_rules`
@@ -1051,7 +1115,7 @@ ALTER TABLE `teacher_designations`
 -- AUTO_INCREMENT for table `teacher_lists`
 --
 ALTER TABLE `teacher_lists`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`

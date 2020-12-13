@@ -85,3 +85,8 @@ Route::post('add_facilities_description', 'Admin\facilityController@add_faciliti
 // Teacher
 Route::post('addTeacher', 'Admin\TeacherController@addTeacher')->name('addTeacher');
 
+// Gallery
+Route::post('gallery_title', 'Admin\GalleryController@gallery_title')->name('gallery_title');
+Route::post('addGalleryImage', 'Admin\GalleryController@addGalleryImage')->name('addGalleryImage');
+
+

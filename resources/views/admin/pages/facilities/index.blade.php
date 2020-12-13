@@ -97,7 +97,7 @@
                         </button>
                   </div>
                   <div class="form-group" id="productExtraBody">               
-                     <input type="text" name='descriptions[]' class="form-control" placeholder="Insert More Description">
+                     <input type="text" name='description[]' class="form-control" placeholder="Insert More Description">
                   </div>        
                   <div class="float-right btn-group form-group" role="group" aria-label="Basic example">
                      <a href="{{route("category.home")}}" class="btn btn-danger tn-outline-light">Cancel</a>
@@ -345,7 +345,7 @@
          $(document).on('click','#addExtraField',function (e) {
          e.preventDefault()
          console.log('here')
-         var html = "<input type='text' name='payment_rules[]' class='form-control mt-2' placeholder='Insert More Rules'>"
+         var html = "<input type='text' name='description[]' class='form-control mt-2' placeholder='Insert More Description'>"
          $('#productExtraBody').append(html)
          });
       </script>

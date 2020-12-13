@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Admin\Gallery;
+use App\Admin\GalleryImageList;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
@@ -18,8 +19,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $data['galleries'] = Gallery::all();
-        return view('admin.pages.gallery.index',$data);
+        // $data['galleries'] = Gallery::all();
+        return view('admin.pages.gallery.index');
     }
 
     /**
@@ -27,9 +28,29 @@ class GalleryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function gallery_title(Request $request){
+
+        Gallery::create(['gallery_title' => $request->gallery_title]);
+        return back()->with('gallery_title','Gallery Title add successfully');
+    }
+
+    public function addGalleryImage(Request $request){
+
+        $gallery_title_id = $request->gallery_title_id;
+
+        $images = $request->file('imageFile');
+      
+        if ($request->hasFile('imageFile')){
+            foreach ($images as $image) {
+                $random = substr(sha1(mt_rand()),17,10);
+                $imageName = $random.".".$image->getClientOriginalExtension();
+                $image->move('galleryImage/', $imageName);
+
+                GalleryImageList::create(['gallery_title_id' => $gallery_title_id, 'photo' => $imageName ]);
+            }
+      }
+
+        return back()->with('addGalleryImage','Gallery Image add successfully');
     }
 
     /**
