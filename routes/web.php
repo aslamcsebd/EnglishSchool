@@ -28,7 +28,7 @@ Route::prefix('admin')->group(function(){
         Route::resource('teacher-category', 'Admin\categoryController');
         Route::resource('curricular', 'Admin\CurricularController');
         Route::resource('appointment', 'Admin\AppointmentController');
-        Route::resource('teacher', 'Admin\DoctorController');
+        Route::resource('teacher', 'Admin\TeacherController');
         Route::resource('shedule', 'Admin\SheduleController');
         Route::resource('about/mission', 'Admin\aboutus\MissionController');
         Route::resource('about/administration', 'Admin\aboutus\AdministrationController');
@@ -81,4 +81,7 @@ Route::get('birthday','PrincipalSMSController@birthday')->name('birthday');
 
 // facilities
 Route::post('add_facilities_description', 'Admin\facilityController@add_facilities_description')->name('add_facilities_description');
+
+// Teacher
+Route::post('addTeacher', 'Admin\TeacherController@addTeacher')->name('addTeacher');
 

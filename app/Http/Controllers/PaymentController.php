@@ -61,13 +61,11 @@ class PaymentController extends Controller{
          ->where('transaction_ID', $request->Transaction_ID)
          ->where('status', 1)->count()  == 1 ){
 
-         // paymentNumber::where($category_id);
-         $abc = paymentNumber::where('paymentNumber', $request->paymentNumber)
+         paymentNumber::where('paymentNumber', $request->paymentNumber)
          ->where('transaction_ID', $request->Transaction_ID)
-         ->where('status', 1);
-
-         $abc2=$abc->status = false;
-            $abc2->save();
+         ->where('status', 1)->update([
+            "status" => false
+         ]);
 
 
          $validated = $request->validate([
@@ -101,6 +99,14 @@ class PaymentController extends Controller{
       if (paymentNumber::where('paymentNumber', $request->paymentNumber)
          ->where('transaction_ID', $request->Transaction_ID)
          ->where('status', 1)->count()  == 1 ){
+
+          paymentNumber::where('paymentNumber', $request->paymentNumber)
+         ->where('transaction_ID', $request->Transaction_ID)
+         ->where('status', 1)->update([
+            "status" => false
+         ]);
+
+
                  
         //   dd($id);
         $data['app'] = Admission::find($request->id);

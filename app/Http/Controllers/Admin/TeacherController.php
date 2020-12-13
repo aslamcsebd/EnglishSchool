@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Admin;
 use App\Admin\Doctor;
 use App\Admin\Category;
+use App\teacherList;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
-class DoctorController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -32,15 +33,33 @@ class DoctorController extends Controller
     public function create()
     {
         $data['categories'] = Category::all();
-        return view('admin.pages.doctor.create',$data);
+        return view('admin.pages.teacher.create',$data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
+    public function addTeacher(Request $request){
+
+        // echo $request->designation_id;
+        // echo $request->teacherName;
+        // echo $request->qualification;
+
+
+        if ($request->hasFile('photo')){
+            if($files=$request->file('photo')){
+                $photoName=$request->teacherName.".".$files->getClientOriginalExtension();
+                $files->move('teacherPhoto/', $photoName);
+
+            teacherList::insert([
+               'designation_id'=>$request->designation_id,
+               'teacherName'=>$request->teacherName,
+               'qualification'=>$request->qualification,
+               'photo'=>$photoName
+            ]);
+           }    
+        }
+        return back()->with('teacher', 'Info Save Successfully');
+    } 
+
     public function store(Request $request)
     {
         $request->validate([

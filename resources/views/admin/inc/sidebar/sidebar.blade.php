@@ -55,7 +55,7 @@
                   </p>
                </a>
                <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/teacher*')) ? 'block' : 'none' }}">
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                      <a href="{{route("teacher-category.index")}}" class="nav-link  {{ (request()->is('admin/teacher-category')) ? 'active' : '' }}">
                         <i class="nav-icon far fa-circle"></i>
                         <p>Teachers Category</p>
@@ -66,7 +66,7 @@
                         <i class="nav-icon far fa-circle"></i>
                         <p>All Teacher</p>
                      </a>
-                  </li>
+                  </li> --}}
                   <li class="nav-item">
                      <a href="{{route("teacher.create")}}" class="nav-link  {{ (request()->is('admin/teacher/create')) ? 'active' : '' }}">
                         <i class="nav-icon far fa-circle"></i>

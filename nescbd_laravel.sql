@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 12, 2020 at 03:27 AM
+-- Generation Time: Dec 12, 2020 at 10:00 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -180,7 +180,8 @@ INSERT INTO `blank_forms` (`id`, `name_eng`, `father_name_eng`, `mother_name_eng
 (14, 'aslam', 'fdfd', 'dfdf', '2020-12-23', '2020-12-09 12:03:11', '2020-12-09 12:03:11'),
 (15, 'ghghh', 'ghgh', 'vbvb', '2020-12-25', '2020-12-11 11:11:57', '2020-12-11 11:11:57'),
 (16, 'ghghh', 'ghgh', 'vbvb', '2020-12-25', '2020-12-11 11:12:13', '2020-12-11 11:12:13'),
-(17, 'ghghh', 'ghgh', 'vbvb', '2020-12-25', '2020-12-11 11:13:13', '2020-12-11 11:13:13');
+(17, 'ghghh', 'ghgh', 'vbvb', '2020-12-25', '2020-12-11 11:13:13', '2020-12-11 11:13:13'),
+(18, 'Aslam', 'ghgh', 'vbvb', '2020-12-12', '2020-12-12 03:48:22', '2020-12-12 03:48:22');
 
 -- --------------------------------------------------------
 
@@ -500,7 +501,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (59, '2020_11_30_064118_create_principal_s_m_s_table', 1),
 (60, '2020_11_30_101642_create_birthdays_table', 1),
 (61, '2020_12_06_191754_create_facilities_descriptions_table', 1),
-(62, '2020_12_11_110042_create_class_times_table', 10);
+(62, '2020_12_11_110042_create_class_times_table', 10),
+(63, '2020_12_12_070243_create_teacher_designations_table', 11),
+(64, '2020_12_12_072704_create_teacher_lists_table', 12);
 
 -- --------------------------------------------------------
 
@@ -597,29 +600,6 @@ CREATE TABLE `payment_numbers` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `payment_numbers`
---
-
-INSERT INTO `payment_numbers` (`id`, `paymentNumber`, `transaction_ID`, `status`, `created_at`, `updated_at`) VALUES
-(2, '016', '016', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(3, '016806072934', 'ghghg', 0, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(4, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(5, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(6, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(7, '016806072934', 'ghghggh', 0, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(8, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(9, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(10, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(11, '016806072934', 'ghghg', 0, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(12, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(13, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(14, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(15, '016806072934', 'ghghg', 0, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(16, '016806072934', 'ghghg', 1, '2020-11-28 23:24:51', '2020-11-28 23:24:51'),
-(17, '12', '21', 1, '2020-11-29 04:46:56', '2020-11-29 04:46:56'),
-(18, '111', '222', 1, '2020-11-29 04:47:50', '2020-11-29 04:47:50');
-
 -- --------------------------------------------------------
 
 --
@@ -669,6 +649,46 @@ CREATE TABLE `shedules` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `day` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher_designations`
+--
+
+CREATE TABLE `teacher_designations` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `designation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teacher_designations`
+--
+
+INSERT INTO `teacher_designations` (`id`, `designation`, `created_at`, `updated_at`) VALUES
+(1, 'Principal', NULL, NULL),
+(2, 'Co-ordinator', NULL, NULL),
+(3, 'Assent Teacher', NULL, NULL),
+(4, 'Junior Teacher', NULL, NULL),
+(5, 'Culture Teacher', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher_lists`
+--
+
+CREATE TABLE `teacher_lists` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `designation_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `teacherName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `qualification` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -855,6 +875,18 @@ ALTER TABLE `shedules`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `teacher_designations`
+--
+ALTER TABLE `teacher_designations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `teacher_lists`
+--
+ALTER TABLE `teacher_lists`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -893,7 +925,7 @@ ALTER TABLE `birthdays`
 -- AUTO_INCREMENT for table `blank_forms`
 --
 ALTER TABLE `blank_forms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -965,7 +997,7 @@ ALTER TABLE `galleries`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `missions`
@@ -1008,6 +1040,18 @@ ALTER TABLE `principal_s_m_s`
 --
 ALTER TABLE `shedules`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `teacher_designations`
+--
+ALTER TABLE `teacher_designations`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `teacher_lists`
+--
+ALTER TABLE `teacher_lists`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
