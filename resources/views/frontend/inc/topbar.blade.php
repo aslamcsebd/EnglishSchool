@@ -126,7 +126,7 @@
            
             <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}"><a href="{{ route('aboutus') }}" class="nav-link">About Us</a></li>
 
-            <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}"><a ref="{{ route('aboutus') }}" class="nav-link">Academics</a></li>
+            {{-- <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}"><a ref="{{ route('aboutus') }}" class="nav-link">Academics</a></li> --}}
 
             <li class="nav-item {{ (request()->is('gallery')) ? 'active' : '' }}"><a href="{{ route('gallery') }}" class="nav-link">Gallery</a></li>
             
@@ -140,7 +140,7 @@
             
             <li class="nav-item {{ (request()->is('curricular')) ? 'active' : '' }}"><a href="{{ route('birthday') }}" class="nav-link">Birthdays Today</a></li>
 
-            <li class="nav-item {{ (request()->is('curricular')) ? 'active' : '' }}"><a href="{{ route('curricular') }}" class="nav-link">Curricular Activities</a></li>            
+            {{-- <li class="nav-item {{ (request()->is('curricular')) ? 'active' : '' }}"><a href="{{ route('curricular') }}" class="nav-link">Curricular Activities</a></li>             --}}
             
          </ul>
       </div>

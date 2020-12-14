@@ -76,8 +76,10 @@ Route::get('PrincipalSMS','PrincipalSMSController@PrincipalSMS')->name('Principa
 Route::post('UpdatePrincipalSMS','PrincipalSMSController@UpdatePrincipalSMS')->name('UpdatePrincipalSMS');
 
 // birthday
-
 Route::get('birthday','PrincipalSMSController@birthday')->name('birthday');
+Route::get('birthdayToday', 'Admin\GalleryController@birthdayToday')->name('birthdayToday');
+Route::post('addBirthday', 'Admin\GalleryController@addBirthday')->name('addBirthday');
+
 
 // facilities
 Route::post('add_facilities_description', 'Admin\facilityController@add_facilities_description')->name('add_facilities_description');
@@ -85,8 +87,10 @@ Route::post('add_facilities_description', 'Admin\facilityController@add_faciliti
 // Teacher
 Route::post('addTeacher', 'Admin\TeacherController@addTeacher')->name('addTeacher');
 
-// Gallery
+
 Route::post('gallery_title', 'Admin\GalleryController@gallery_title')->name('gallery_title');
 Route::post('addGalleryImage', 'Admin\GalleryController@addGalleryImage')->name('addGalleryImage');
+
+// Birthday
 
 

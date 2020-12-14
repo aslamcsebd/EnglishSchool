@@ -78,7 +78,7 @@
          </div>
            <div class="vl2"></div>
          <div class="col g-success third">
-            <div class="container ">
+            <div class="container">
                <div class="ml-4">
                   <h1 class="">Website Visitors</h1>
                   <ul class="mt-3">

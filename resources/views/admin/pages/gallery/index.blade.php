@@ -37,7 +37,7 @@
                         <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Gallery Title" name="gallery_title">
                      </div>
                   </div>
-                  <div class="col-2 btn-group form-group">
+                  <div class="col-3 btn-group form-group">
                      <button type="submit" class="btn btn-success tn-outline-light">Add</button>
                      <a href="{{route("category.home")}}" class="btn btn-danger tn-outline-light">Cancel</a>
                   </div>
@@ -105,14 +105,12 @@
             </div>
          </form>
       </div>
-   </div>
-
-   
+   </div>   
 
    <div class="col-10 mt-4">
       <div class="card">
          <div class="card-header">
-            <h3 class="card-title">Latest Payment</h3>
+            <h3 class="card-title">All Image Payment</h3>
          </div>
          <div class="card-body">
             <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -122,68 +120,21 @@
                         <thead>
                            <tr role="row">
                               <th>No</th>
-                              <th>Payment Number</th>
-                              <th>Transaction ID</th>
-                              <th>Time</th>
-                              <th>Action</th>
+                              <th>Gallery Name</th>
+                              <th>Photo</th>
                            </tr>
                         </thead>
                         <tbody>
 
                            @php
-                              $newPayments = App\paymentNumber::latest()->where('status', 1)->get();
+                              $photos = App\Admin\GalleryImageList::all()
                            @endphp                                          
 
-                           @foreach ($newPayments as $newPayment)
+                           @foreach ($photos as $photo)
                               <tr role="row" class="odd">
-                                 <td tabindex="0" class="sorting_1">{{ $loop->index + 1 }}</td>
-                                 <td tabindex="0" class="sorting_1">{{ $newPayment->paymentNumber }}</td>
-                                 <td tabindex="0" class="sorting_1">{{ $newPayment->transaction_ID }}</td>
-                                 <td>{{ \Carbon\Carbon::parse($newPayment->created_at)->diffForhumans() }}</td>
-                                 <td><button class="btn btn-success">Accept</button></td>                         
-                              </tr>                                
-                           @endforeach
-                        </tbody>
-                     </table>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-
-   <div class="col-10 mt-4">
-      <div class="card">
-         <div class="card-header">
-            <h3 class="card-title">Accept Payment</h3>
-         </div>
-         <div class="card-body">
-            <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-               <div class="row">
-                  <div class="col-sm-12 col-md-12-">
-                     <table id="example1" class="table table-bordered table-striped dataTable dtr-inline text-center" role="grid" aria-describedby="example1_info">
-                        <thead>
-                           <tr role="row">
-                              <th>No</th>
-                              <th>Payment Number</th>
-                              <th>Transaction ID</th>
-                              <th>Time</th>
-                              {{-- <th>Action</th> --}}
-                           </tr>
-                        </thead>
-                        <tbody>
-
-                           @php
-                              $newPayments = App\paymentNumber::latest()->where('status', 0)->get();
-                           @endphp                                          
-
-                           @foreach ($newPayments as $newPayment)
-                              <tr role="row" class="odd">
-                                 <td tabindex="0" class="sorting_1">{{ $loop->index + 1 }}</td>
-                                 <td tabindex="0" class="sorting_1">{{ $newPayment->paymentNumber }}</td>
-                                 <td tabindex="0" class="sorting_1">{{ $newPayment->transaction_ID }}</td>
-                                 <td>{{ \Carbon\Carbon::parse($newPayment->created_at)->diffForhumans() }}</td>
-                                 {{-- <td><button class="btn btn-success">Accept</button></td>                          --}}
+                                 <td>{{ $loop->index + 1 }}</td>
+                                 <td>{{ $photo->galleryName->gallery_title}}</td>
+                                 <td><img src="{{ asset('galleryImage/'.$photo->photo) }}" width="100" height="80"></td>     
                               </tr>                                
                            @endforeach
                         </tbody>

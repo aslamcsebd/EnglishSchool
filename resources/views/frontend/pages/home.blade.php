@@ -156,7 +156,7 @@
        @endphp
 
       <div class="row justify-content-center sms p-2">
-         <div class="col-10 ftco-animate m-1">
+         <div class="col-9 ftco-animate m-1">
             <div class="text ftco-animate">
                <p>
                   <b>{{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit =4800, $end = '...') }}
@@ -166,7 +166,7 @@
             <p class="pt-4 float-left"><span>{{$PrincipalSMS->name}}</p>
          </div>
          <div class="col ftco-animate">
-            <img src="{{ asset($PrincipalSMS->image) }}" alt="" class="responsive float-right" width="100%" eight="100%"> 
+            <img src="{{ asset('image/'. $PrincipalSMS->image) }}" alt="" class="responsive float-right" width="100%" eight="100%"> 
          </div>
       </div>
    </div>
@@ -188,10 +188,10 @@
        </style>
       <div class="row justify-content-center sms p-2">
          <div class="col ftco-animate">
-            <img src="{{ asset($PrincipalSMS->image) }}" alt="" class="responsive float-left" width="100%" height="100%"> 
+            <img src="{{ asset('image/'.$PrincipalSMS->image) }}" alt="" class="responsive float-left" width="100%" height="100%"> 
          </div>
 
-         <div class="col-10 ftco-animate m-1">
+         <div class="col-9 ftco-animate m-1">
             <div class="text ftco-animate">
               <b>
                   {{ \Illuminate\Support\Str::limit($PrincipalSMS->leftSide, $limit = 4800, $end = '...') }}
@@ -217,7 +217,7 @@
        @endphp
 
       <div class="row justify-content-center mb-5 principal">
-         <img src="{{ asset('image/photo.jpg') }}" alt="" class="img-fluid" idth="100%" eight="100%">         
+         <img src="{{ asset('image/'.$PrincipalSMS->image) }}" alt="" class="img-fluid" idth="100%" eight="100%">         
       </div>
       <div class="row ustify-content-center sms">
          <div class="col-9 ftco-animate m-1">
@@ -237,7 +237,7 @@
    </div>
 </section>
 
-<section class="ftco-section ftco-no-pb">
+<section class="ftco-section ftco-no-pb" style="display: none;">
 	<div class="container">
 		<div class="row justify-content-center mb-5 pb-2">
 			<div class="col-md-8 text-center heading-section ftco-animate">

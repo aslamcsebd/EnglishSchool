@@ -27,7 +27,7 @@
                     @foreach($teachers as $teacher)
                         <div class="col-3 mt-2">
                             <img src="{{ asset('teacherPhoto/'.$teacher->photo) }}" width="240" height="" class="">                       
-                            <h2 class="mt-2 mb-2 text-center">{{ $teacher->teacherName }}</h2>  
+                            <p class="mt-2 mb-2 text-center">{{ $teacher->teacherName }}</p>  
                         </div>
                     @endforeach
                 </div>
@@ -54,7 +54,7 @@
                     @foreach($teachers as $teacher)
                         <div class="col-3 mt-2">
                             <img src="{{ asset('teacherPhoto/'.$teacher->photo) }}" width="240" height="" class="">                       
-                            <h2 class="mt-2 mb-2 text-center">{{ $teacher->teacherName }}</h2>  
+                            <p class="mt-2 mb-2 text-center">{{ $teacher->teacherName }}</p>  
                         </div>
                     @endforeach
                 </div>
@@ -80,7 +80,7 @@
                     @foreach($teachers as $teacher)
                         <div class="col-3 mt-2">
                             <img src="{{ asset('teacherPhoto/'.$teacher->photo) }}" width="240" height="" class="">                       
-                            <h2 class="mt-2 mb-2 text-center">{{ $teacher->teacherName }}</h2>  
+                            <p class="mt-2 mb-2 text-center">{{ $teacher->teacherName }}</p>  
                         </div>
                     @endforeach
                 </div>
@@ -106,7 +106,7 @@
                     @foreach($teachers as $teacher)
                         <div class="col-3 mt-2">
                             <img src="{{ asset('teacherPhoto/'.$teacher->photo) }}" width="240" height="" class="">                       
-                            <h2 class="mt-2 mb-2 text-center">{{ $teacher->teacherName }}</h2>  
+                            <p class="mt-2 mb-2 text-center">{{ $teacher->teacherName }}</p>  
                         </div>
                     @endforeach
                 </div>
@@ -131,7 +131,7 @@
                     @foreach($teachers as $teacher)
                         <div class="col-3 mt-2">
                             <img src="{{ asset('teacherPhoto/'.$teacher->photo) }}" width="240" height="" class="">                       
-                            <h2 class="mt-2 mb-2 text-center">{{ $teacher->teacherName }}</h2>  
+                            <p class="mt-2 mb-2 text-center">{{ $teacher->teacherName }}</p>  
                         </div>
                     @endforeach
                 </div>

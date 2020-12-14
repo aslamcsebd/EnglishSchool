@@ -44,7 +44,6 @@ class PrincipalSMSController extends Controller{
             'leftSide'=>$request->leftSide,
             'rightSide'=>$request->rightSide,
             'name'=>$request->name,
-            'image'=>$image,
          ]);
       }
       

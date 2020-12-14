@@ -49,7 +49,7 @@
                      </div>
                      <div class="form-group">
                         <div>
-                           <img src="{{ $PrincipalSMS->image }}" width="120"> <br>
+                           <img src="{{ asset('image/'.$PrincipalSMS->image) }}" width="120"> <br>
                            <span >Present Image</span>
                         </div>
 

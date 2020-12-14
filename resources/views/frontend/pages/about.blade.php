@@ -19,7 +19,7 @@
 			</div>
 			 <div class="col ftco-animate m-1 bg-light">
 			   <div class="text p-4 ftco-animate">
-				 <img src="{{ asset('image/school_building.jpg') }}" alt="" class="img-fluid" width="100%" height="100%">
+				 <img src="{{ asset('image/'.$about->image) }}" alt="" class="img-fluid" width="100%" height="100%">
 			   </div>
 			</div>
 			</div>

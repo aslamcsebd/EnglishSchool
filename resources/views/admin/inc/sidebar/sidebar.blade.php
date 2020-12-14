@@ -1,12 +1,12 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
    <!-- Brand Logo -->
-   <a href="index3.html" class="brand-link">
+   <a href="index3.html" class="brand-link text-center">
       {{-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
       style="opacity: .8"> --}}
       <span class="brand-text font-weight-light">Admin Panel</span>
    </a>
    <div class="sidebar">
-      <div class="user-panel">
+      <div class="user-panel" style="display: none;">
          <div class="image">
             {{-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> --}}
          </div>
@@ -26,242 +26,63 @@
                   <p>Dashboard</p>
                </a>
             </li>
+           
             <li class="nav-item">
-               
-            </li>
-            {{-- <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/appointment')) ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-calendar-check"></i>
-                  <p>
-                     Appointment
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
+               <a href="{{route("teacher.create")}}" class="nav-link  {{ (request()->is('admin/teacher/create')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                  <p>All Teacher</p>
                </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/appointment')) ? 'block' : 'none' }}">
-                  <li class="nav-item">
-                     <a href="{{route("appointment.index")}}" class="nav-link  {{ (request()->is('admin/appointment')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>All Appointment</p>
-                     </a>
-                  </li>
-               </ul>
-            </li> --}}
-            <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/teacher*')) ? 'active' : '' }}">
-                  <i class="fas fa-chalkboard-teacher"></i>
-                  <p>
-                     Teacher
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
-               </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/teacher*')) ? 'block' : 'none' }}">
-                  {{-- <li class="nav-item">
-                     <a href="{{route("teacher-category.index")}}" class="nav-link  {{ (request()->is('admin/teacher-category')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>Teachers Category</p>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="{{route("teacher.index")}}" class="nav-link  {{ (request()->is('admin/teacher')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>All Teacher</p>
-                     </a>
-                  </li> --}}
-                  <li class="nav-item">
-                     <a href="{{route("teacher.create")}}" class="nav-link  {{ (request()->is('admin/teacher/create')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>Add Teacher</p>
-                     </a>
-                  </li>
-               </ul>
             </li>
             
-            <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/about*')) ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-address-card"></i>
-                  <p>
-                     About Us
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
+            <li class="nav-item">
+               <a href="{{route("facilities.index")}}" class="nav-link  {{ (request()->is('admin/facilities')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-school"></i>
+                  <p>All Facilities</p>
                </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/about*')) ? 'block' : 'none' }}">
-                  <li class="nav-item">
-                     <a href="{{route("about.index")}}" class="nav-link  {{ (request()->is('admin/about')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>Who We are</p>
-                     </a>
-                  </li>
-                  {{-- <li class="nav-item">
-                     <a href="{{route("mission.index")}}" class="nav-link  {{ (request()->is('admin/about/mission')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>Mission</p>
-                     </a>
-                  </li> --}}
-                  <li class="nav-item">
-                     <a href="{{route("administration.index")}}" class="nav-link  {{ (request()->is('admin/about/administration')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>Administration</p>
-                     </a>
-                  </li>
-                  
-               </ul>
             </li>
-            <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/facilities')) ? 'active' : '' }}">
-                  <i class="fas fa-school"></i>
-                  <p>
-                     Facilities
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
+            
+            <li class="nav-item">
+               <a href="{{route("admission.all")}}" class="nav-link  {{ (request()->is('admin/admission')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-sign-in-alt"></i>
+                  <p>All Applications</p>
                </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/facilities')) ? 'block' : 'none' }}">
-                  <li class="nav-item">
-                     <a href="{{route("facilities.index")}}" class="nav-link  {{ (request()->is('admin/facilities')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>All Facilities</p>
-                     </a>
-                  </li>
-               </ul>
             </li>
-            <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/curricular*')) ? 'active' : '' }}">
-                  <i class="fas fa-paint-brush"></i>
-                  <p>
-                     Curricular Activities
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
+            
+            <li class="nav-item">
+               <a href="{{route("notice.index")}}" class="nav-link  {{ (request()->is('admin/notice')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-bell"></i>
+                  <p>All Notice</p>
                </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/curricular')) ? 'block' : 'none' }}">
-                  <li class="nav-item">
-                     <a href="{{route("curricular.index")}}" class="nav-link  {{ (request()->is('admin/curricular')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>All Curricular Activities</p>
-                     </a>
-                  </li>
-               </ul>
-            </li>
-            <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/admission*')) ? 'active' : '' }}">
-                  <i class="fas fa-sign-in-alt"></i>
-                  <p>
-                     Admission Applications
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
-               </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/admission')) ? 'block' : 'none' }}">
-                  <li class="nav-item">
-                     <a href="{{route("admission.all")}}" class="nav-link  {{ (request()->is('admin/admission')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>All Applications</p>
-                     </a>
-                  </li>
-               </ul>
-            </li>
-            <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/notice*')) ? 'active' : '' }}">
-                  <i class="fas fa-bell"></i>
-                  <p>
-                     Notice Board
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
-               </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/notice')) ? 'block' : 'none' }}">
-                  <li class="nav-item">
-                     <a href="{{route("notice.index")}}" class="nav-link  {{ (request()->is('admin/notice')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>All Notice</p>
-                     </a>
-                  </li>
-               </ul>
-            </li>
-            <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/gallery*')) ? 'active' : '' }}">
-                  <i class="fas fa-images"></i>
-                  <p>
-                     Gallery
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
-               </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/gallery')) ? 'block' : 'none' }}">
-                  <li class="nav-item">
-                     <a href="{{route("gallery.index")}}" class="nav-link  {{ (request()->is('admin/gallery')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>All Images</p>
-                     </a>
-                  </li>
-               </ul>
             </li>
 
-            {{-- <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/shedule*')) ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-clock"></i>
-                  <p>
-                     Shedule
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
+            <li class="nav-item">
+               <a href="{{route("gallery.index")}}" class="nav-link  {{ (request()->is('admin/gallery')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-images"></i>
+                  <p>All Gallery</p>
                </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/shedule*')) ? 'block' : 'none' }}">
-                  <li class="nav-item">
-                     <a href="{{route("shedule.index")}}" class="nav-link  {{ (request()->is('admin/shedule')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>All Shedule</p>
-                     </a>
-                  </li>
-                  
-               </ul>
-            </li>
+            </li>        
             
             <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/dental-college*')) ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-address-card"></i>
-                  <p>
-                     Dental Collage
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
-               </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/dental-college*')) ? 'block' : 'none' }}">
-                  <li class="nav-item">
-                     <a href="{{route("category.index")}}" class="nav-link  {{ (request()->is('admin/dental-college/category')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p> Categories</p>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="{{route("post.index")}}" class="nav-link  {{ (request()->is('admin/dental-college/post')) ? 'active' : '' }}">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p> Posts</p>
-                     </a>
-                  </li>
-               </ul>
-            </li> --}}
-               
-            <li class="nav-item has-treeview">
-               <a href="#" class="nav-link  {{ (request()->is('admin/shedule*')) ? 'active' : '' }}">
+               <a href="{{ url('payment') }}" class="nav-link">
                   <i class="nav-icon fas fa-comment-dollar"></i>
-                  <p>
-                     Payment Matter
-                     <i class="fas fa-angle-left right"></i>
-                  </p>
-               </a>
-               <ul class="nav nav-treeview" style="display:{{ (request()->is('admin/shedule*')) ? 'block' : 'none' }}">
-                  <li class="nav-item">
-                     <a href="{{ url('payment') }}" class="nav-link">
-                        <i class="nav-icon far fa-circle"></i>
-                        <p>All Payment</p>
-                     </a>
-                  </li>                  
-               </ul>
+                  <p>All Payment</p>
+               </a>    
             </li>
 
             <li class="nav-item has-treeview">
-               <a class="nav-link" href="{{ url('PrincipalSMS') }}">
-                  <i class="fas fa-newspaper"></i>
-                     <p>Principal's Message</p>                    
+               <a href="{{ url('PrincipalSMS') }}" class="nav-link" >
+                  <i class="nav-icon fas fa-newspaper"></i>
+                  <p>Principal's Message</p>                    
+               </a>      
+            </li>
+
+            <li class="nav-item has-treeview">
+               <a href="{{ url('birthdayToday') }}" class="nav-link" >
+                  <i class="nav-icon fas fa-newspaper"></i>
+                  <p>Student's Birthday</p>               
                </a>      
             </li>
          </ul>
       </nav>
-      <!-- /.sidebar-menu -->
    </div>
-   <!-- /.sidebar -->
 </aside>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Admin\Gallery;
+use App\birthday;
 use App\Admin\GalleryImageList;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,6 +23,32 @@ class GalleryController extends Controller
         // $data['galleries'] = Gallery::all();
         return view('admin.pages.gallery.index');
     }
+
+    public function birthdayToday(){
+        return view('admin.pages.birthday.index');
+    }
+
+
+    public function addBirthday(Request $request){
+
+        $request->validate([
+            'dob'=>'required',
+            'name'=>'required',
+            'class'=>'required',
+            'classId'=>'required'
+        ]);
+
+        birthday::create([
+            'dob' => $request->dob,
+            'name' => $request->name,
+            'class' => $request->class,
+            'classId' => $request->classId,
+        ]);
+        return back()->with('addBirthday','Birthday Add successfully');
+    }
+
+
+    
 
     /**
      * Show the form for creating a new resource.

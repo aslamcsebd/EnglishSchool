@@ -107,7 +107,7 @@
                         <th>Teacher Name</th>
                         <th>Qualification</th>
                         <th>Photo</th>
-                        <th>Action</th>
+                        {{-- <th>Action</th> --}}
                      </tr>
                   </thead>
                   <tbody>
@@ -121,9 +121,9 @@
                            <td>{{ $teacher->teacherName }}</td>
                            <td>{{ $teacher->qualification }}</td>
                            <td><img src=" {{ asset('teacherPhoto/'.$teacher->photo) }} " width="120"></td>
-                           <td>
+                           {{-- <td>
                               <button class="btn btn-danger" onclick="return confirm('are you sure ?')">Delete</button>
-                           </td>
+                           </td> --}}
                         </tr>
                      @endforeach
                   </tbody>

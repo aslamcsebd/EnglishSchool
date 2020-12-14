@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <title>NESC</title>
         <meta charset="utf-8">

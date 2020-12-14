@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
-                @if (count($users) < 1)
+                {{-- @if (count($users) < 1) --}}
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -66,18 +66,18 @@
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
-                                    {{count($users)}}
+                                    {{-- {{count($users)}} --}}
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div>
                    
-               @else
+               {{-- @else
                    <h3 class="text-danger">
                        There is already an Admin
                    </h3>
-               @endif 
+               @endif  --}}
                
             </div>
         </div>
