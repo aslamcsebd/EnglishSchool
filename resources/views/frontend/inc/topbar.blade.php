@@ -8,7 +8,7 @@
       .slogan{ color: #31BEF2; font-weight: 400; font-size: 14px; } 
       .right{ padding-top: -50px;} 
    </style>
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="{{url('/')}}">
          <img src="{{ url('admin/image/logo.png') }}" alt="" class='img-fluid' width="75" height="80">
          <span class="slogan text-center pl-4">Learners Today</span> <br>
          <span class="slogan text-center right pl-3">Leaders Tomorrow</span>

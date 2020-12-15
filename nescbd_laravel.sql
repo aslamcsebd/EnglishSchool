@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 14, 2020 at 10:45 AM
+-- Generation Time: Dec 15, 2020 at 09:48 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -629,7 +629,7 @@ CREATE TABLE `teacher_designations` (
 INSERT INTO `teacher_designations` (`id`, `designation`, `created_at`, `updated_at`) VALUES
 (1, 'Principal', NULL, NULL),
 (2, 'Co-ordinator', NULL, NULL),
-(3, 'Assent Teacher', NULL, NULL),
+(3, 'Assistant Teacher', NULL, NULL),
 (4, 'Junior Teacher', NULL, NULL),
 (5, 'Culture Teacher', NULL, NULL);
 
@@ -648,13 +648,6 @@ CREATE TABLE `teacher_lists` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `teacher_lists`
---
-
-INSERT INTO `teacher_lists` (`id`, `designation_id`, `teacherName`, `qualification`, `photo`, `created_at`, `updated_at`) VALUES
-(7, '1', 'Md. Asad Ullah Adil', 'ssc', 'Md. Asad Ullah Adil.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -888,7 +881,7 @@ ALTER TABLE `birthdays`
 -- AUTO_INCREMENT for table `blank_forms`
 --
 ALTER TABLE `blank_forms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -978,13 +971,13 @@ ALTER TABLE `missions`
 -- AUTO_INCREMENT for table `notices`
 --
 ALTER TABLE `notices`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `payment_numbers`
 --
 ALTER TABLE `payment_numbers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `payment_rules`
@@ -1014,7 +1007,7 @@ ALTER TABLE `teacher_designations`
 -- AUTO_INCREMENT for table `teacher_lists`
 --
 ALTER TABLE `teacher_lists`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
