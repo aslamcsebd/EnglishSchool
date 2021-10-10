@@ -111,6 +111,6 @@
    </div>
 
    <div class="g-info copywrite p-2">
-      <p class="text-center">© 2020 NESC All Rights Reserved. Web Design & Developed By: <i><a href="https://www.facebook.com/aslam.cse.ctg">NXGIT SOFT</a></i></p>
+      <p class="text-center">© 2020 NESC All Rights Reserved. Web Design & Developed By: <i><a href="https://www.facebook.com/aslamcsebd">NXGIT SOFT</a></i></p>
    </div>
 </footer>
